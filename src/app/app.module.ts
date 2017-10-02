@@ -18,6 +18,7 @@ import { MatchedWithComponent } from './matched-with/matched-with.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MatchDetailsComponent } from './match-details/match-details.component';
 import { ChatComponent } from './chat/chat.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -37,7 +38,8 @@ export const firebaseConfig = {
     MatchedWithComponent,
     ProfileComponent,
     MatchDetailsComponent,
-    ChatComponent
+    ChatComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
