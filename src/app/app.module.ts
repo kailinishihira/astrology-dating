@@ -20,6 +20,8 @@ import { MatchDetailsComponent } from './match-details/match-details.component';
 import { ChatComponent } from './chat/chat.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GenderPipe } from './gender.pipe';
+import { AgePipe } from './age.pipe';
+import { HoroscopeSignPipe } from './horoscope-sign.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -41,7 +43,9 @@ export const firebaseConfig = {
     MatchDetailsComponent,
     ChatComponent,
     NavbarComponent,
-    GenderPipe
+    GenderPipe,
+    AgePipe,
+    HoroscopeSignPipe
   ],
   imports: [
     BrowserModule,
