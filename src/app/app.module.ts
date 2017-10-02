@@ -13,12 +13,12 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
-import { MatchComponent } from './match/match.component';
 import { MatchedWithComponent } from './matched-with/matched-with.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MatchDetailsComponent } from './match-details/match-details.component';
 import { ChatComponent } from './chat/chat.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatchListComponent } from './match-list/match-list.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -34,12 +34,12 @@ export const firebaseConfig = {
     SignupComponent,
     LoginComponent,
     AboutComponent,
-    MatchComponent,
     MatchedWithComponent,
     ProfileComponent,
     MatchDetailsComponent,
     ChatComponent,
-    NavbarComponent
+    NavbarComponent,
+    MatchListComponent
   ],
   imports: [
     BrowserModule,
