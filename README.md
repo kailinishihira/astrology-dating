@@ -1,5 +1,73 @@
 # AstrologyDating
 
+#### A dating app which creates matches based on astrological sign, 10.02.17
+
+#### By _ **Jesse Bryan, Lois Choi, Charlie Kelson, Parul Mishra Dubedy, Kaili Nishihira**_
+
+## Description
+_A dating app which matches the user with other users based on their astrological sign. The user may also filter user profiles based on astrological sign._
+
+|| Behavior  | Input  | Output  |
+|---|---|---|---|
+|| | | | |
+
+
+## Setup/Installation Requirements
+
+* _Install [Node.js](https://nodejs.org/en/download/)_
+* _Clone repository_
+* _Install Angular CLI `npm install -g @angular/cli@1.0.0`_
+* _Install Typescript `npm list -g typescript`_
+* _Install Bower `npm install bower -g`_
+* _`bower init`_
+* _`bower install bootstrap --save`_
+
+## Create a Firebase account
+* Create an account with [Firebase](https://firebase.google.com/)
+* Create a new project
+* Change the Firebase rules in the database to "true"
+
+```
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}
+```
+## Install Firebase
+* `npm install angularfire2@4.0.0-rc.0 firebase --save`
+* Create a new file `src/app/api-keys.ts`
+* Paste the following code into the file and replace with your credentials from Firebase:
+
+```
+export var masterFirebaseConfig = {
+    apiKey: "xxxx",
+    authDomain: "xxxx.firebaseapp.com",
+    databaseURL: "https://xxxx.firebaseio.com",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "xxxx"
+  };
+  ```
+
+#### Install promise-polyfill if you encounter error: Can't resolve 'promise-polyfill'
+* `npm install promise-polyfill --save-exact`
+
+
+## Technologies Used
+* _JavaScript_
+* _Node.js_
+* _[Bootstrap](http://getbootstrap.com/getting-started/)_
+* AngularJS 2
+
+
+### License
+
+Copyright (c) 2017 **_Jesse Bryan, Lois Choi, Charlie Kelson, Parul Mishra Dubedy, Kaili Nishihira_**
+
+*Licensed under the [MIT License](https://opensource.org/licenses/MIT)*
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 ## Development server
