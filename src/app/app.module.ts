@@ -19,6 +19,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MatchDetailsComponent } from './match-details/match-details.component';
 import { ChatComponent } from './chat/chat.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { GenderPipe } from './gender.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -39,7 +40,8 @@ export const firebaseConfig = {
     ProfileComponent,
     MatchDetailsComponent,
     ChatComponent,
-    NavbarComponent
+    NavbarComponent,
+    GenderPipe
   ],
   imports: [
     BrowserModule,
