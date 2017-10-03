@@ -14,4 +14,7 @@ export class User
     public ageRangeMin: number,
     public ageRangeMax: number,
     public description: string = ''){}
+    public likes: string[] = null;
+    public dislikes: string[] = null;
+    public matches: string[] = null;
 }

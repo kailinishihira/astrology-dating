@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { User } from './user.model';
 import { FirebaseApp } from 'angularfire2';
 
+
 @Injectable()
 export class UserService {
   user: Observable<firebase.User>;
@@ -37,6 +38,23 @@ export class UserService {
     })
   }
 
+  // listAllUsers(nextPageToken) {
+  //   // List batch of users, 100 at a time.
+  //   admin.auth().listUsers(100, nextPageToken)
+  //     .then((listUsersResult)  => {
+  //       listUsersResult.users.forEach((userRecord)  =>  {
+  //         console.log("user", userRecord.toJSON());
+  //       });
+  //       if (listUsersResult.pageToken) {
+  //         // List next batch of users.
+  //         this.listAllUsers(listUsersResult.pageToken)
+  //       }
+  //     })
+  //     .catch(function(error) {
+  //       console.log("Error listing users:", error)
+  //     })
+  // }
+
   login(event) {
     event.preventDefault();
 
@@ -50,6 +68,8 @@ export class UserService {
       this.errorMessage = error.message;
     })
   }
+
+
 
   logout() {
     this.afAuth.auth.signOut();
@@ -66,6 +86,9 @@ export class UserService {
   getChatLog(otherUser) {
 
   }
+
+
+
   getMatchById(userId: string)
   {
     return this.database.object('/users/'+ userId);
