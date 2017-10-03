@@ -2,6 +2,12 @@ img {
   width: 50%;
 }
 
+img:hover {
+  opacity: 0.8;
+  width: 51%;
+
+}
+
 h2 {
   text-align: center;
 }

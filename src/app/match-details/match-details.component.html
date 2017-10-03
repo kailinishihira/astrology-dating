@@ -1,4 +1,5 @@
 <div *ngIf="matchToDisplay | async">
+  <h3>{{(matchToDisplay | async).username}}</h3>
   <div class="card">
     <p class="image"><img class="card-img-top" src="{{(matchToDisplay | async).image}}" alt="match image"></p>
     <div class="card-block">

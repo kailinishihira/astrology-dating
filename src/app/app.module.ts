@@ -25,6 +25,7 @@ import { HoroscopeSignPipe } from './horoscope-sign.pipe';
 import { MatchListComponent } from './match-list/match-list.component';
 import 'firebase/storage';
 import { FileDropDirective, FileSelectDirective } from 'ng2-file-upload';
+import { FilteredSignsComponent } from './filtered-signs/filtered-signs.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -50,7 +51,8 @@ export const firebaseConfig = {
     HoroscopeSignPipe,
     MatchListComponent,
     FileDropDirective,
-    FileSelectDirective
+    FileSelectDirective,
+    FilteredSignsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+<label for="zodiac-sign">Filter by Astrological Sign:</label>
+<select class="filter" (change) = onChangeSign($event.target.value) name="zodiac-signs">
+  <option value="allSigns" selected="selected">All Signs</option>
+  <option value="aries">Aries</option>
+  <option value="taurus">Taurus</option>
+  <option value="gemini">Gemini</option>
+  <option value="cancer">Cancer</option>
+  <option value="leo">Leo</option>
+  <option value="virgo">Virgo</option>
+  <option value="libra">Libra</option>
+  <option value="scorpio">Scorpio</option>
+  <option value="sagittarius">Sagittarius</option>
+  <option value="capricon">Capricorn</option>
+  <option value="aquarius">Aquarius</option>
+  <option value="pisces">Pisces</option>
+</select>
+
+
+<div *ngFor="let user of users | async | horoscopeSign: desiredSign" class="card mb-3">
+  <div *ngIf ="user" class="card text-center">
+    <p class="match-list-photos"><img (click) = "goToDetailPage(user)" class="card-img-top" src="{{user.image}}" alt="match image"></p>
+    <div class="card-block">
+      <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
+      <h5>{{user.location}}</h5>
+      <h5>{{user.sign}}</h5>
+      <h6>{{user.gender}}</h6>
+      <p class="card-text"><strong>About:</strong> {{user.description}}</p>
+    </div>
+  </div>
+</div>
