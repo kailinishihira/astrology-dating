@@ -23,6 +23,8 @@ import { GenderPipe } from './gender.pipe';
 import { AgePipe } from './age.pipe';
 import { HoroscopeSignPipe } from './horoscope-sign.pipe';
 import { MatchListComponent } from './match-list/match-list.component';
+import 'firebase/storage';
+import { FileDropDirective, FileSelectDirective } from 'ng2-file-upload';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -46,7 +48,9 @@ export const firebaseConfig = {
     GenderPipe,
     AgePipe,
     HoroscopeSignPipe,
-    MatchListComponent
+    MatchListComponent,
+    FileDropDirective,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

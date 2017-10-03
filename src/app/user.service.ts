@@ -3,8 +3,10 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
+import * as firebaseStorage from 'firebase/storage';
 import { Router } from '@angular/router';
 import { User } from './user.model';
+import { FirebaseApp } from 'angularfire2';
 
 @Injectable()
 export class UserService {
@@ -12,7 +14,7 @@ export class UserService {
   errorMessage: string = '';
   users: FirebaseListObservable<any[]>;
 
-  constructor(public afAuth: AngularFireAuth, private router: Router, private database: AngularFireDatabase)
+  constructor(private storage: FirebaseApp, public afAuth: AngularFireAuth, private router: Router, private database: AngularFireDatabase)
   {
     this.user = afAuth.authState;
     this.users = database.list('users')
@@ -24,6 +26,12 @@ export class UserService {
 
     this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then(() => {
       this.database.list('users').push(user);
+      let imageRef = this.storage.storage().ref().child('images');
+      imageRef.put(user.image[0]).then(() => {
+        console.log('success');
+      }).catch(() => {
+        console.log(':(');
+      })
     })
   }
 

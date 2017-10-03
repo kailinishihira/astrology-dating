@@ -15,9 +15,9 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
-  createUser(event) {
+  createUser(event, photo) {
     event.preventDefault();
-
+    console.log(event.target.elements);
     let userName = event.target.elements[0].value;
     let userPassword = event.target.elements[1].value;
     let userEmail = event.target.elements[2].value;
@@ -30,12 +30,12 @@ export class SignupComponent implements OnInit {
     let userAgeRangeMin = event.target.elements[7].value;
     let userAgeRangeMax = event.target.elements[8].value;
     let userDescription = event.target.elements[9].value;
-    let userPhoto = event.target.elements[10].value;
+    let userPhoto = event.target.elements[10].files;
 
     //calculate age based on bday instead of having them enter it,
     //same with sign
 
-    let newUser = new User(userName, userPassword, userEmail, userGender, userInterestedIn, userBirthday, userAge, userSign, userLocation, userAgeRangeMin, userAgeRangeMax, userPhoto);
+    let newUser = new User(userName, userPassword, userEmail, userGender, userInterestedIn, userBirthday, userAge, userSign, userLocation, userAgeRangeMin, userAgeRangeMax, userPhoto, userDescription);
 
     this.userService.createUser(newUser);
   }

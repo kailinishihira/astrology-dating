@@ -3,6 +3,6 @@ export var masterFirebaseConfig = {
  authDomain: "astrology-dating.firebaseapp.com",
  databaseURL: "https://astrology-dating.firebaseio.com",
  projectId: "astrology-dating",
- storageBucket: "",
+ storageBucket: "astrology-dating.appspot.com",
  messagingSenderId: "317472043551"
 };
