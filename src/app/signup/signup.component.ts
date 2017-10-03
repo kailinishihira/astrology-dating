@@ -23,8 +23,8 @@ export class SignupComponent implements OnInit {
     let userEmail = event.target.elements[2].value;
     let userGender = event.target.elements[3].value;
     let userInterestedIn = event.target.elements[4].value;
-    let userBirthday = new Date(event.target.elements[5].value);
-    let userAge = ((Date.now() - userBirthday.getTime()) / 1000 / 60 / 60 / 24 / 365.25);
+    let userBirthday = event.target.elements[5].value;
+    let userAge = Math.floor(((Date.now() - (new Date(userBirthday)).getTime()) / 1000 / 60 / 60 / 24 / 365.25));
     let userSign = "Taurus";
     let userLocation = event.target.elements[6].value;
     let userAgeRangeMin = event.target.elements[7].value;
