@@ -10,9 +10,12 @@ import { User } from './user.model';
 export class UserService {
   user: Observable<firebase.User>;
   errorMessage: string = '';
+  users: FirebaseListObservable<any[]>;
 
-  constructor(public afAuth: AngularFireAuth, private router: Router, private db: AngularFireDatabase) {
+  constructor(public afAuth: AngularFireAuth, private router: Router, private database: AngularFireDatabase)
+  {
     this.user = afAuth.authState;
+    this.users = database.list('users')
   }
   //wish list - user verification email
   //interested in, age, age range, location, gender, bday, email, username, photo
@@ -20,7 +23,7 @@ export class UserService {
     event.preventDefault();
 
     this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then(() => {
-      this.db.list('users').push(user);
+      this.database.list('users').push(user);
     })
   }
 
@@ -43,7 +46,7 @@ export class UserService {
   }
 
   getPotentialMatches() {
-
+    return this.users;
   }
 
   getMatched() {
@@ -52,6 +55,10 @@ export class UserService {
 
   getChatLog(otherUser) {
 
+  }
+  getMatchById(userId: string)
+  {
+    return this.database.object('/users/'+ userId);
   }
 
 }
