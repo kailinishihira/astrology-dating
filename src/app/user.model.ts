@@ -12,6 +12,8 @@ export class User
     public location: string,
     public ageRangeMin: number,
     public ageRangeMax: number,
-    public image: string,
     public description: string = ''){}
+    public likes: string[] = null;
+    public dislikes: string[] = null;
+    public matches: string[] = null;
 }
