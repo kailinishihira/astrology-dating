@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { User } from '../user.model';
 import { UserService } from '../user.service';
+import {HoroscopeSignPipe} from '../horoscope-sign.pipe';
 
 @Component({
   selector: 'app-filtered-signs',
