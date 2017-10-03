@@ -2,7 +2,9 @@
 
 <div *ngFor="let user of users | async" class="card mb-3">
   <div *ngIf ="user" class="card text-center">
+    <button class="d-inline-block">Pass</button>
     <p class="match-list-photos"><img (click) = "goToDetailPage(user)" class="card-img-top" src="{{user.image}}" alt="match image"></p>
+    <button>Like</button>
     <div class="card-block">
       <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
       <h5>{{user.location}}</h5>
@@ -12,3 +14,21 @@
     </div>
   </div>
 </div>
+
+
+<!-- <div id="myCarousel" class="carousel slide by-inverse" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="d-block img-fluid ml-auto- mr-auto" src="" alt="">
+      <div class="carousel-caption">
+        <h3>testing</h3>
+        <p>testing</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="myCarousel" role="button" data-slide="prev-icon" aria-hidden="true">
+</div> -->
