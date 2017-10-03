@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="sign-up">
   <form (submit)="createUser($event)">
     <div class="input">
@@ -56,4 +57,98 @@
       <button type="submit">Create Account</button>
     </div>
   </form>
+=======
+<div class="card signup-card">
+  <h2>Sign up</h2>
+  <div class="sign-up">
+    <form (submit)="createUser($event)">
+      <div class="input">
+        <label>Username:</label>
+        <input type="text" class="form-text" required>
+      </div>
+      <div class="input">
+        <label>Password (at least 6 characters long):</label>
+        <input type="password" class="form-text" required>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="input">
+            <label>Email:</label>
+            <input type="email" class="form-control" required>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input">
+            <label>Gender:</label>
+            <select>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="both">Other</option>
+             </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input">
+            <label>Interested In:</label>
+            <select>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="both">Both</option>
+             </select>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="input">
+        <label>Birthday:</label>
+        <input type="date" class="form-text" required>
+      </div>
+      <hr>
+
+
+      <div class="input">
+        <label>Location:</label>
+        <input type="text" class="form-text" required>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="input">
+            <label>Age Range Minimum:</label>
+            <input type="number" class="form-text" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input">
+            <label>Age Range Maximum:</label>
+            <input type="number" class="form-text" required>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="input">
+        <label>Description About You (optional):</label>
+        <textarea type="text" class="form-control" rows="3" required></textarea>
+      </div>
+      <hr>
+
+      <div class="input">
+        <label>Photo:</label>
+        <input type="file" multiple required>
+      </div>
+      <div class="input">
+        <button type="submit" class="btn btn-info create-account-btn">Create Account</button>
+      </div>
+    </form>
+  </div>
+>>>>>>> 069a29332269f7ad7aaded4455374ab1d8b56b9c
 </div>

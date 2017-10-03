@@ -1,0 +1,29 @@
+.signup-card {
+  padding: 35px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+.input {
+  margin-bottom: 15px;
+}
+.create-account-btn {
+  float:right;
+  background-color: #eb715b;
+  border: none;
+  letter-spacing: 2px;
+  padding: 10px;
+}
+.create-account-btn:hover {
+    background-color: #f70449;
+    cursor: pointer;
+}
+label {
+  letter-spacing: 1px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
