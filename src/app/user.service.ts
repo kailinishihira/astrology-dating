@@ -24,6 +24,7 @@ export class UserService {
 
     this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then(() => {
       this.database.list('users').push(user);
+        this.router.navigate(['all-matches']);
     })
   }
 
