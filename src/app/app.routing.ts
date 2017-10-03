@@ -6,6 +6,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { MatchDetailsComponent } from './match-details/match-details.component';
 import { FilteredSignsComponent } from './filtered-signs/filtered-signs.component';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
   {
     path: 'filtered-signs',
     component: FilteredSignsComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

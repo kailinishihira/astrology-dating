@@ -87,7 +87,20 @@ export class UserService {
 
   }
 
+  getUserByEmail(givenEmail: string) {
+    let allUsers = this.database.list('/users').subscribe(data => {
+      console.log(data);
+      data.forEach((currentUser) => {
+        if(currentUser.email == givenEmail) {
 
+          let newUser =  new User(currentUser.username, currentUser.password, currentUser.email, currentUser.gender, currentUser.interestedIn, currentUser.birthday, currentUser.age, currentUser.sign, currentUser.location, currentUser.ageRangeMin, currentUser.ageRangeMax, currentUser.description);
+          console.log(newUser);
+          return newUser;
+        }
+      })
+    });
+
+  }
 
   getMatchById(userId: string)
   {
