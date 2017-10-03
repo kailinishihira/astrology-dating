@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { User } from './user.model';
 import { FirebaseApp } from 'angularfire2';
 
+
 @Injectable()
 export class UserService {
   user: Observable<firebase.User>;
@@ -21,23 +22,38 @@ export class UserService {
   }
   //wish list - user verification email
   //interested in, age, age range, location, gender, bday, email, username, photo
-  createUser(user: User) {
+  createUser(inputUser: User, photos: FileList) {
     event.preventDefault();
 
-    this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then(() => {
-      this.database.list('users').push(user);
-// <<<<<<< HEAD
-      let imageRef = this.storage.storage().ref().child('images');
-      imageRef.put(user.image[0]).then(() => {
-        console.log('success');
-      }).catch(() => {
-        console.log(':(');
-      })
-// =======
-//         this.router.navigate(['all-matches']);
-// >>>>>>> 510f089c13d1ddb157282f1c5b806c60227bb98f
+    this.afAuth.auth.createUserWithEmailAndPassword(inputUser.email, inputUser.password).then(() => {
+      this.database.list('users').push(inputUser);
+      for (let i = 0; i < photos.length; i++) {
+        let imageRef = this.storage.storage().ref().child(`images/${this.afAuth.auth.currentUser.uid}/${Math.floor(Math.random() * 1000)}${photos[i].name}`);
+        imageRef.put(photos[i]).then(() => {
+        }).catch((error) => {
+          console.log(error.message);
+        })
+      }
+        this.router.navigate(['']);
     })
   }
+
+  // listAllUsers(nextPageToken) {
+  //   // List batch of users, 100 at a time.
+  //   admin.auth().listUsers(100, nextPageToken)
+  //     .then((listUsersResult)  => {
+  //       listUsersResult.users.forEach((userRecord)  =>  {
+  //         console.log("user", userRecord.toJSON());
+  //       });
+  //       if (listUsersResult.pageToken) {
+  //         // List next batch of users.
+  //         this.listAllUsers(listUsersResult.pageToken)
+  //       }
+  //     })
+  //     .catch(function(error) {
+  //       console.log("Error listing users:", error)
+  //     })
+  // }
 
   login(event) {
     event.preventDefault();
@@ -52,6 +68,8 @@ export class UserService {
       this.errorMessage = error.message;
     })
   }
+
+
 
   logout() {
     this.afAuth.auth.signOut();
@@ -73,6 +91,22 @@ export class UserService {
   getChatLog(otherUser) {
 
   }
+
+  getUserByEmail(givenEmail: string) {
+    let allUsers = this.database.list('/users').subscribe(data => {
+      console.log(data);
+      data.forEach((currentUser) => {
+        if(currentUser.email == givenEmail) {
+
+          let newUser =  new User(currentUser.username, currentUser.password, currentUser.email, currentUser.gender, currentUser.interestedIn, currentUser.birthday, currentUser.age, currentUser.sign, currentUser.location, currentUser.ageRangeMin, currentUser.ageRangeMax, currentUser.description);
+          console.log(newUser);
+          return newUser;
+        }
+      })
+    });
+
+  }
+
   getMatchById(userId: string)
   {
     return this.database.object('/users/'+ userId);
