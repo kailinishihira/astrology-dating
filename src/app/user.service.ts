@@ -14,6 +14,7 @@ export class UserService {
   user: Observable<firebase.User>;
   errorMessage: string = '';
   users: FirebaseListObservable<any[]>;
+  newUser;
 
   constructor(private storage: FirebaseApp, public afAuth: AngularFireAuth, private router: Router, private database: AngularFireDatabase)
   {
@@ -87,20 +88,30 @@ export class UserService {
 
   }
 
-  getUserByEmail(givenEmail: string) {
-    let allUsers = this.database.list('/users').subscribe(data => {
-      console.log(data);
-      data.forEach((currentUser) => {
-        if(currentUser.email == givenEmail) {
+  getUserByEmail(givenEmail: string){
+    let newUserList = this.database.list('/users');
 
-          let newUser =  new User(currentUser.username, currentUser.password, currentUser.email, currentUser.gender, currentUser.interestedIn, currentUser.birthday, currentUser.age, currentUser.sign, currentUser.location, currentUser.ageRangeMin, currentUser.ageRangeMax, currentUser.description);
-          console.log(newUser);
-          return newUser;
-        }
-      })
-    });
+    this.newUser = newUserList;
+    // .subscribe(dataLastEmittedFrom => {
+    //   this.newUser = dataLastEmittedFrom;
+    //   console.log(this.newUser);
+      // return this.newUser;
+    // });
+}
 
-  }
+
+  //   (data => {
+  //     data.forEach((currentUser) => {
+  //       if(currentUser.email == givenEmail) {
+  //
+  //         this.newUser = new User(currentUser.username, currentUser.password, currentUser.email, currentUser.gender, currentUser.interestedIn, currentUser.birthday, currentUser.age, currentUser.sign, currentUser.location, currentUser.ageRangeMin, currentUser.ageRangeMax, currentUser.description);
+  //         console.log(this.newUser);
+  //         return this.newUser;
+  //
+  //       }
+  //     })
+  //   });
+  // }
 
   getMatchById(userId: string)
   {
