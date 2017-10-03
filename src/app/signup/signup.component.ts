@@ -40,4 +40,6 @@ export class SignupComponent implements OnInit {
     this.userService.createUser(newUser, userPhotos);
   }
 
+
+
 }
