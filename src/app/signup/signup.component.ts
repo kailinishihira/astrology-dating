@@ -30,14 +30,14 @@ export class SignupComponent implements OnInit {
     let userAgeRangeMin = event.target.elements[7].value;
     let userAgeRangeMax = event.target.elements[8].value;
     let userDescription = event.target.elements[9].value;
-    let userPhoto = event.target.elements[10].files;
+    let userPhotos = event.target.elements[10].files;
 
     //calculate age based on bday instead of having them enter it,
     //same with sign
 
-    let newUser = new User(userName, userPassword, userEmail, userGender, userInterestedIn, userBirthday, userAge, userSign, userLocation, userAgeRangeMin, userAgeRangeMax, userPhoto, userDescription);
+    let newUser = new User(userName, userPassword, userEmail, userGender, userInterestedIn, userBirthday, userAge, userSign, userLocation, userAgeRangeMin, userAgeRangeMax, userDescription);
 
-    this.userService.createUser(newUser);
+    this.userService.createUser(newUser, userPhotos);
   }
 
 }

@@ -21,21 +21,19 @@ export class UserService {
   }
   //wish list - user verification email
   //interested in, age, age range, location, gender, bday, email, username, photo
-  createUser(user: User) {
+  createUser(inputUser: User, photos: FileList) {
     event.preventDefault();
 
-    this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password).then(() => {
-      this.database.list('users').push(user);
-// <<<<<<< HEAD
-      let imageRef = this.storage.storage().ref().child('images');
-      imageRef.put(user.image[0]).then(() => {
-        console.log('success');
-      }).catch(() => {
-        console.log(':(');
-      })
-// =======
-//         this.router.navigate(['all-matches']);
-// >>>>>>> 510f089c13d1ddb157282f1c5b806c60227bb98f
+    this.afAuth.auth.createUserWithEmailAndPassword(inputUser.email, inputUser.password).then(() => {
+      this.database.list('users').push(inputUser);
+      for (let i = 0; i < photos.length; i++) {
+        let imageRef = this.storage.storage().ref().child(`images/${this.afAuth.auth.currentUser.uid}/${Math.floor(Math.random() * 1000)}${photos[i].name}`);
+        imageRef.put(photos[i]).then(() => {
+        }).catch((error) => {
+          console.log(error.message);
+        })
+      }
+        this.router.navigate(['']);
     })
   }
 

@@ -13,6 +13,5 @@ export class User
     public location: string,
     public ageRangeMin: number,
     public ageRangeMax: number,
-    public image: string,
     public description: string = ''){}
 }
