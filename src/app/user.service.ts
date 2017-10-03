@@ -61,6 +61,11 @@ export class UserService {
     return this.users;
   }
 
+  getPotentialMatchesBySign()
+  {
+    return this.users;
+  }
+
   getMatched() {
 
   }

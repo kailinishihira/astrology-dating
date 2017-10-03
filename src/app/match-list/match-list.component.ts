@@ -12,7 +12,6 @@ import { UserService} from '../user.service';
 })
 
 export class MatchListComponent implements OnInit {
-
   users: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
@@ -25,4 +24,5 @@ export class MatchListComponent implements OnInit {
   goToDetailPage(clickedUser) {
     this.router.navigate(['users', clickedUser.$key]);
   }
+
 }
