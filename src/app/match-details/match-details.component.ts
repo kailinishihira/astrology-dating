@@ -13,15 +13,15 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 })
 export class MatchDetailsComponent implements OnInit {
   matchId: string;
-  matchToDistplay;
+  matchToDisplay;
   constructor(private route : ActivatedRoute, private location: Location, private userService : UserService) {}
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
     this.matchId = urlParameters['id'];
   });
-  
-  this.matchToDistplay = this.userService.getMatchById(this.matchId)
+
+  this.matchToDisplay = this.userService.getMatchById(this.matchId)
   }
 
 }

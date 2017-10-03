@@ -1,19 +1,20 @@
 <div *ngIf="matchToDisplay | async">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="well">
-        <img src='"'+{{(matchToDisplay | async).image}}+'"' alt="match image">
-      </div>
+  <div class="card">
+    <p class="image"><img class="card-img-top" src="{{(matchToDisplay | async).image}}" alt="match image"></p>
+    <div class="card-block">
+      <p class="card text-center">Add caption...</p>
     </div>
-    <div class="col-md-6">
-      <div class="well">
-        <h3>User Name: {{(matchToDisplay | async).username}}</h3>
-        <h3>Gender: {{(matchToDisplay | async).gender}}</h3><br/>
-        <h3>Age: {{(matchToDisplay | async).age}}</h3><br/>
-        <h3>Looking For: {{(matchToDisplay | async).interestedIn}}</h3><br/>
-        <h3>Location: {{(matchToDisplay | async).location}}</h3><br/>
-        <h3>Description: {{(matchToDisplay | async).description}}</h3><br/>
-      </div>
+  </div>
+
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">{{(matchToDisplay | async).username}}</h4>
+      <h6 class="card-subtitle mb-2 text-muted">{{(matchToDisplay | async).sign}}</h6>
+      <p class="card-text"><strong>Gender:</strong> {{(matchToDisplay | async).gender}}</p>
+      <p class="card-text"><strong>Age:</strong> {{(matchToDisplay | async).age}}</p>
+      <p class="card-text"><strong>Interested in:</strong> {{(matchToDisplay | async).interestedIn}}, ({{(matchToDisplay | async).ageRangeMin}} - {{(matchToDisplay | async).ageRangeMax}} years old)</p>
+      <p class="card-text"><strong>Location:</strong> {{(matchToDisplay | async).location}}</p>
+      <p class="card-text"><strong>About {{(matchToDisplay | async).username}}:</strong> {{(matchToDisplay | async).description}}</p>
     </div>
   </div>
 </div>

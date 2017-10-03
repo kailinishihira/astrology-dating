@@ -21,4 +21,8 @@ export class MatchListComponent implements OnInit {
   ngOnInit() {
     this.users = this.userService.getPotentialMatches();
   }
+
+  goToDetailPage(clickedUser) {
+    this.router.navigate(['users', clickedUser.$key]);
+  }
 }
