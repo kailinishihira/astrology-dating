@@ -22,9 +22,20 @@ export class LoginComponent implements OnInit {
 
   }
 
-  findUser() {
-    this.returnedUser = this.userService.getUserByEmail("lois@gmail.com");
-    console.log(this.returnedUser);
-  }
+  // private afAuth: AngularFireAuth
+  // this.user = this.afAuth.authState;
+  //
+  // findUser() {
+  //   this.userService.getUserByEmail(user.email);
+  //   this.userService.newUser.subscribe(data => {
+  //     data.forEach(myUser => {
+  //       if (myUser.email === "lois@gmail.com") {
+  //         this.returnedUser = myUser;
+  //
+  //       }
+  //     })
+  //   });
+  // }
+
 
 }
