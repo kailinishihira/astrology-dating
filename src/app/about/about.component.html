@@ -6,7 +6,7 @@
 
   <div class="card-deck">
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/aries.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img id="aries" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/aries.png" alt="Card image cap"></p>
       <div class="card-block">
         <h4 class="card-title">Aries</h4>
         <h6 class="card-subtitle mb-2 text-muted">March 21 – April 19</h6>
@@ -14,10 +14,11 @@
         <p class="card-text"><strong>Strengths:</strong> courageous, determined, confident, enthusiastic, optimistic, honest, passionate</p>
         <p class="card-text"><strong>Weaknesses:</strong> impatient, moody, short-tempered, impulsive, aggressive</p>
       </div>
+
     </div>
 
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/leo.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img id="leo" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/leo.png" alt="Card image cap" ></p>
       <div class="card-block">
         <h4 class="card-title">Leo</h4>
         <h6 class="card-subtitle mb-2 text-muted">July 23 – Aug. 22</h6>
@@ -26,7 +27,7 @@
       </div>
     </div>
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/sagittarius.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img id="sagittarius" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/sagittarius.png" alt="Card image cap"></p>
       <div class="card-block">
         <h4 class="card-title">Sagittarius</h4>
         <h6 class="card-subtitle mb-2 text-muted">Nov. 22 – Dec. 21</h6>
@@ -36,14 +37,13 @@
     </div>
   </div>
 
-
   <h3>Earth Signs</h3>
   <h5>The Pragmatists of the Zodiac</h5>
   <p>Under the influence of the solid and practical Earth element, these three zodiac signs thrive on strength, determination, and practicality, and are at one with the physical world. They are focused and disciplined, eager to get the job done. Creating a true sense of foundation and security in the world, Taurus, Virgo, and Capricorn are the most pragmatic signs of the zodiac.</p>
 
   <div class="card-deck">
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/taurus.png" alt="Card image cap" (click)="goToFilteredSign(taurus)"></p>
+      <p class="sign-photo"><img id="taurus" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/taurus.png" alt="Card image cap" ></p>
       <div class="card-block">
         <h4 class="card-title">Taurus</h4>
         <h6 class="card-subtitle mb-2 text-muted">April 20 – May 20</h6>
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/virgo.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img id="virgo" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/virgo.png" alt="Card image cap" ></p>
       <div class="card-block">
         <h4 class="card-title">Virgo</h4>
         <h6 class="card-subtitle mb-2 text-muted">Aug. 23 – Sept. 22</h6>
@@ -61,7 +61,7 @@
       </div>
     </div>
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/capricorn.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img id="capricorn" (click)=onClickingSign($event.currentTarget.id) class="card-img-top" (click)=onClickingSign($event.target.id) src="resources/img/capricorn.png" alt="Card image cap" id="capricorn"></p>
       <div class="card-block">
         <h4 class="card-title">Capricorn</h4>
         <h6 class="card-subtitle mb-2 text-muted">Dec. 22 – Jan. 19</h6>
@@ -78,7 +78,7 @@
 
   <div class="card-deck">
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/gemini.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id) src="resources/img/gemini.png" alt="Card image cap" id="gemini"></p>
       <div class="card-block">
         <h4 class="card-title">Gemini</h4>
         <h6 class="card-subtitle mb-2 text-muted">May 21 – June 20</h6>
@@ -87,7 +87,8 @@
       </div>
     </div>
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/libra.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id)
+      src="resources/img/libra.png" alt="Card image cap" id="libra"></p>
       <div class="card-block">
         <h4 class="card-title">Libra</h4>
         <h6 class="card-subtitle mb-2 text-muted">Sept. 23 – Oct. 22</h6>
@@ -96,7 +97,7 @@
       </div>
     </div>
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/aquarius.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id) src="resources/img/aquarius.png" alt="Card image cap" id="aquarius"></p>
       <div class="card-block">
         <h4 class="card-title">Aquarius</h4>
         <h6 class="card-subtitle mb-2 text-muted">Jan. 20 – Feb. 18</h6>
@@ -113,7 +114,7 @@
 
   <div class="card-deck">
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/cancer.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id) src="resources/img/cancer.png" alt="Card image cap" id="cancer"></p>
       <div class="card-block">
         <h4 class="card-title">Cancer</h4>
         <h6 class="card-subtitle mb-2 text-muted">June 21 – July 22</h6>
@@ -122,7 +123,7 @@
       </div>
     </div>
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/scorpio.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id) src="resources/img/scorpio.png" alt="Card image cap" id="scorpio"></p>
       <div class="card-block">
         <h4 class="card-title">Scorpio</h4>
         <h6 class="card-subtitle mb-2 text-muted">Oct. 23 – Nov. 21</h6>
@@ -131,7 +132,7 @@
       </div>
     </div>
     <div class="card">
-      <p class="sign-photo"><img class="card-img-top" src="resources/img/pisces.png" alt="Card image cap"></p>
+      <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id)  src="resources/img/pisces.png" alt="Card image cap" id="pisces"></p>
       <div class="card-block">
         <h4 class="card-title">Pisces</h4>
         <h6 class="card-subtitle mb-2 text-muted">Feb. 19 – March 20</h6>
@@ -140,5 +141,17 @@
       </div>
     </div>
   </div>
-
 </div>
+
+<!-- <div *ngFor="let user of users | async | horoscopeSign: desiredSign" class="card mb-3">
+  <div *ngIf ="user" class="card text-center">
+    <p class="match-list-photos"><img class="card-img-top" src="{{user.image}}" alt="match image"></p>
+    <div class="card-block">
+      <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
+      <h5>{{user.location}}</h5>
+      <h5>{{user.sign}}</h5>
+      <h6>{{user.gender}}</h6>
+      <p class="card-text"><strong>About:</strong> {{user.description}}</p>
+    </div>
+  </div>
+</div> -->
