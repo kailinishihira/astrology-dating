@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
 
     //calculate age based on bday instead of having them enter it,
     //same with sign
-    let newUser = new User(userName, userPassword, userEmail, userGender, userInterestedIn, userBirthday, userAge, userSign, userLocation, userAgeRangeMin, userAgeRangeMax, userDescription);
+    let newUser = new User(userName, userPassword, userEmail, userGender, userInterestedIn, userBirthday, userAge, userSign, userElement, userLocation, userAgeRangeMin, userAgeRangeMax, userDescription);
 
     this.userService.createUser(newUser, userPhotos);
   }
