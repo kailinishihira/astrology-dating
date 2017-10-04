@@ -2,7 +2,6 @@
 <div class="container">
   <div class="card mb-3">
     <div *ngIf ="currentPotentialMatch" class="card text-center">
-
       <p class="match-list-photos "><img id="user-photo" (click) = "goToDetailPage(currentPotentialMatch)" class="card-img-top img-border" src="{{currentPotentialMatch.image}}" alt="match image"></p>
 
       <a (click)="like(currentPotentialMatch)" class=""><i class="fa fa-check fa-3x" aria-hidden="true"></i></a>
@@ -15,7 +14,7 @@
         <hr>
 
 
-        <p class="card-text"><em>{{user.description}}</em></p>
+        <p class="card-text"><em>{{currentPotentialMatch.description}}</em></p>
       </div>
     </div>
   </div>

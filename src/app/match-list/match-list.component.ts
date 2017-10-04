@@ -20,10 +20,11 @@ export class MatchListComponent implements OnInit {
   userObject: User;
   returnedUser;
   returnedUserId: string;
+  likedUserId: string;
   users;
   currentRoute: string = this.router.url;
   currentPotentialMatch;
-  currentPotentialMatchIndex: number = 1;
+  currentPotentialMatchIndex: number = 0;
 
   constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService, private database: AngularFireDatabase) {
     this.afAuth.auth.onAuthStateChanged((myUser) =>{
@@ -39,25 +40,49 @@ export class MatchListComponent implements OnInit {
   ngOnInit() {
     this.findUser();
     this.userService.getPotentialMatches().subscribe((userList) => {
-      console.log(userList);
       this.users = userList;
-      this.currentPotentialMatch = this.users[0];
+      this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex];
     });
 
   }
 
   like(likedUser) {
+    console.log(this.currentPotentialMatch);
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
+    console.log(this.currentPotentialMatch);
     this.returnedUser.likes.push(likedUser.email);
-    //need logic to check if other person liked them
 
-    for(let i = 0; i < this.currentPotentialMatch.likes.length; i++) {
-      if (this.currentPotentialMatch.likes[i] == this.returnedUser.email) {
-        alert("It's a match!");
+    //checking to see if they also like you
+    for(let i = 0; i < likedUser.likes.length; i++) {
+      if (likedUser.likes[i] == this.returnedUser.email) {
+        //if both like each other add to matched list
+        this.returnedUser.matches.push(likedUser.email);
+        this.database.object('users/' + this.returnedUserId)
+        .update({
+          matches: this.returnedUser.matches
+        });
+
+        //pushing ourselves to the liked user's matches array
+        likedUser.matches.push(this.returnedUser.email);
+
+        //finding likedUser in database
+        this.userService.getUserByEmail(likedUser.email);
+        this.userService.newUser.subscribe(data => {
+          data.forEach(myUser => {
+            if (myUser.email === likedUser.email) {
+              this.likedUserId = myUser.$key;
+            }
+          })
+        });
+
+        //updating database matches array with local likeduser matches array
+        this.database.object('users/' + this.likedUserId)
+        .update({
+          matches: likedUser.matches
+        })
       }
     }
 
-    //----------------------------------------------
 
     this.database.object('users/' + this.returnedUserId)
     .update({
@@ -68,18 +93,11 @@ export class MatchListComponent implements OnInit {
   dislike(dislikedUser) {
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
     this.returnedUser.dislikes.push(dislikedUser.email);
-    //need logic to check if other person liked them
-
-    //----------------------------------------------
 
     this.database.object('users/' + this.returnedUserId)
     .update({
       dislikes: this.returnedUser.dislikes
     });
-  }
-
-  match() {
-
   }
 
   goToDetailPage(clickedUser) {
