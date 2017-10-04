@@ -23,20 +23,21 @@ export class MatchListComponent implements OnInit {
   currentRoute: string = this.router.url;
 
   constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService) {
-    this.user = this.afAuth.auth.currentUser;
-    if(this.user) {
+    this.afAuth.auth.onAuthStateChanged((myUser) =>{
+    if (myUser) {
+      this.user = myUser;
       this.userEmail = this.user.email;
-      console.log(this.userEmail);
+    } else {
+      this.router.navigate(['login']);
     }
+  });
+
+
   }
 
   ngOnInit() {
     this.findUser();
     this.users = this.userService.getPotentialMatches();
-    console.log(this.returnedUser);
-    setTimeout(() => {
-      console.log(this.returnedUser);
-    }, 3000)
   }
 
   goToDetailPage(clickedUser) {
@@ -49,7 +50,6 @@ export class MatchListComponent implements OnInit {
       data.forEach(myUser => {
         if (myUser.email === this.userEmail) {
           this.returnedUser = myUser;
-          console.log(this.returnedUser);
         }
       })
     });
