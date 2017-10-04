@@ -29,10 +29,8 @@ export class MatchListComponent implements OnInit {
       this.userEmail = this.user.email;
     } else {
       this.router.navigate(['login']);
-    }
-  });
-
-
+      }
+    });
   }
 
   ngOnInit() {

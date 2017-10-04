@@ -125,13 +125,15 @@ export class UserService {
 
 
   updateProfile(updateUser){
-    var userEntryInFirebase = getUserByEmail(updateUser.email);
-    userEntryInFirebase.update({
-      age: userEntryInFirebase.age;
-    })
+    // var userEntryInFirebase = this.getUserByEmail(updateUser.email);
+    // userEntryInFirebase.update({
+    //   age: userEntryInFirebase.age;
+    // })
   }
 
+  deleteProfile(deleteUser){
 
+  }
 
 
 }

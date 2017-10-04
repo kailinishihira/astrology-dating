@@ -20,12 +20,26 @@ export class ProfileComponent implements OnInit {
   returnedUser;
   users: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  showEditForm: boolean = false;
 
   constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService) {
-    this.user = this.afAuth.auth.currentUser;
-    this.userEmail = this.user.email;
+    this.afAuth.auth.onAuthStateChanged((myUser) =>{
+    if (myUser) {
+      this.user = myUser;
+      this.userEmail = this.user.email;
+      console.log(this.userEmail);
+    } else {
+      this.router.navigate(['login']);
+      }
+    });
   }
+
   ngOnInit() {
+    this.findUser();
+  }
+
+  editForm(){
+    this.showEditForm = true;
   }
 
   findUser() {
@@ -34,7 +48,6 @@ export class ProfileComponent implements OnInit {
       data.forEach(myUser => {
         if (myUser.email === this.userEmail) {
           this.returnedUser = myUser;
-
         }
       })
     });
