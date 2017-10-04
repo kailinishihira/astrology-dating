@@ -17,6 +17,8 @@ h1 {
   margin-bottom: 30px;
   margin-right: 20%;
   margin-left: 20%;
+  padding: 50px;
+  border: solid 2px;
 }
 .input {
   margin-bottom: 15px;

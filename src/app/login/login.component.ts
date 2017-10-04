@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.model';
-
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +13,9 @@ import { User } from '../user.model';
   providers: [UserService]
 })
 export class LoginComponent implements OnInit {
-  returnedUser;
+  errorMessage: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private router: Router, private afAuth: AngularFireAuth, private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -20,6 +23,15 @@ export class LoginComponent implements OnInit {
   logIn(event) {
     event.preventDefault();
 
+    let userName = event.target.elements.value[0];
+    let password = event.target.elements.value[1];
+
+    this.afAuth.auth.signInWithEmailAndPassword(userName, password).then(() => {
+      this.errorMessage = '';
+      this.router.navigate(['']);
+    }).catch((error) => {
+      this.errorMessage = error.message;
+    })
   }
 
   // private afAuth: AngularFireAuth

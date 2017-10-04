@@ -12,6 +12,7 @@ import { UserService } from '../user.service';
   providers: [UserService]
 })
 export class AboutComponent implements OnInit {
+click: boolean = false;
 desiredSign: string;
 users: FirebaseListObservable<any[]>;
   constructor(private router : Router, private userService: UserService) { }
@@ -22,7 +23,8 @@ users: FirebaseListObservable<any[]>;
 
   onClickingSign(optionFromSign) {
    this.desiredSign = optionFromSign;
-   this.router.navigate(['filtered-signs'],this.desiredSign);
+   this.click = true;
+   this.router.navigate(['filtered-signs', this.desiredSign]);
    console.log(this.desiredSign);
   }
 }

@@ -17,16 +17,24 @@ import { Observable } from 'rxjs/Observable';
 export class MatchListComponent implements OnInit {
   user;
   userEmail;
+  userObject: User;
   returnedUser;
   users: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
   constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService) {
-    this.user = this.afAuth.auth.currentUser;
-    this.userEmail = this.user.email;
+    this.afAuth.auth.onAuthStateChanged((myUser) =>{
+    if (myUser) {
+      this.user = myUser;
+      this.userEmail = this.user.email;
+    } else {
+      this.router.navigate(['login']);
+      }
+    });
   }
 
   ngOnInit() {
+    this.findUser();
     this.users = this.userService.getPotentialMatches();
   }
 
@@ -40,7 +48,6 @@ export class MatchListComponent implements OnInit {
       data.forEach(myUser => {
         if (myUser.email === this.userEmail) {
           this.returnedUser = myUser;
-
         }
       })
     });

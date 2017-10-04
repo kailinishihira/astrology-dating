@@ -7,7 +7,7 @@ import * as firebaseStorage from 'firebase/storage';
 import { Router } from '@angular/router';
 import { User } from './user.model';
 import { FirebaseApp } from 'angularfire2';
-
+import {ElementPipe} from './element.pipe';
 
 @Injectable()
 export class UserService {
@@ -35,7 +35,7 @@ export class UserService {
           console.log(error.message);
         })
       }
-        this.router.navigate(['']);
+        this.router.navigate(['/start-matches']);
     })
   }
 
@@ -122,5 +122,18 @@ export class UserService {
   {
     return this.database.object('/users/'+ userId);
   }
+
+
+  updateProfile(updateUser){
+    // var userEntryInFirebase = this.getUserByEmail(updateUser.email);
+    // userEntryInFirebase.update({
+    //   age: userEntryInFirebase.age;
+    // })
+  }
+
+  deleteProfile(deleteUser){
+
+  }
+
 
 }

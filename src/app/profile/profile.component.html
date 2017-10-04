@@ -1,3 +1,181 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+  <h1>My Profile</h1>
+  <div class="card">
+    <div class="card-block">
+      <p class="profile-photo"><img id="user-photo" class="card-img-top" src="{{returnedUser.image}}" alt="profile image"></p>
+      <h4 class="card-title">{{returnedUser.username}}</h4>
+      <p class="card-text"><strong>Sign:</strong> {{returnedUser.sign}}</p>
+      <p class="card-text"><strong>Gender:</strong> {{returnedUser.gender}}</p>
+      <p class="card-text"><strong>Age:</strong> {{returnedUser.age}}</p>
+      <p class="card-text"><strong>Interested in:</strong> {{returnedUser.interestedIn}},  ({{returnedUser.ageRangeMin}} - {{returnedUser.ageRangeMax}} years old)</p>
+      <p class="card-text"><strong>Location:</strong> {{returnedUser.location}}</p>
+      <p class="card-text"><strong>About: </strong>{{returnedUser.description}}</p>
+      <button class="btn btn-default" (click)="editForm()">Edit Profile</button>
+    </div>
+  </div>
+
+
+  <div *ngIf="showEditForm">
+    <h3>Edit Profile</h3>
+    <div class="row">
+      <div class="col-md-3">
+        <label>New User Name:</label>
+      </div>
+      <div class="col-md-9">
+        <input [(ngModel)]="returnedUser.username" class="form-control">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Email:</label>
+      </div>
+      <div class="col-md-9">
+        <input [(ngModel)]="returnedUser.email" class="form-control">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Password:</label>
+      </div>
+      <div class="col-md-9">
+        <input [(ngModel)]="returnedUser.password" class="form-control">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Age:</label>
+      </div>
+      <div class="col-md-9">
+        <input [(ngModel)]="returnedUser.age" class="form-control">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Birthday:</label>
+      </div>
+      <div class="col-md-9">
+        <input [(ngModel)]="returnedUser.username" class="form-control" type="date">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Sign:</label>
+      </div>
+      <div class="col-md-9">
+        <select>
+          <option value="aries">Aries</option>
+          <option value="taurus">Taurus</option>
+          <option value="gemini">Gemini</option>
+          <option value="cancer">Cancer</option>
+          <option value="leo">Leo</option>
+          <option value="virgo">Virgo</option>
+          <option value="libra">Libra</option>
+          <option value="scorpio">Scorpio</option>
+          <option value="sagittarius">Sagittarius</option>
+          <option value="capricorn">Capricorn</option>
+          <option value="aquarius">Aquarius</option>
+          <option value="pisces">Pisces</option>
+         </select>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Gender:</label>
+      </div>
+      <div class="col-md-9">
+        <select>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="both">Other</option>
+         </select>
+      </div>
+    </div>
+    <hr>
+
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Location:</label>
+      </div>
+      <div class="col-md-9">
+        <input [(ngModel)]="returnedUser.location" class="form-control">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Age Range Minimum:</label>
+      </div>
+      <div class="col-md-9">
+        <input [(ngModel)]="returnedUser.ageRangeMin" class="form-control" type="number">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Age Range Maximum:</label>
+      </div>
+      <div class="col-md-9">
+        <input [(ngModel)]="returnedUser.ageRangeMax" class="form-control">
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Interested In:</label>
+      </div>
+      <div class="col-md-9">
+        <!-- <input [(ngModel)]="returnedUser.username" class="form-control"> -->
+        <select>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="both">Both</option>
+         </select>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label>New About You:</label>
+      </div>
+      <div class="col-md-9">
+        <textarea type="text" rows="3" [(ngModel)]="returnedUser.description" class="form-control"></textarea>
+      </div>
+    </div>
+    <hr>
+
+    <button class="btn" (click)="updateThisUser(returnedUser)">Save Updated Profile</button>
+
+
+    <h3>Edit Photos</h3>
+    <div class="row">
+      <div class="col-md-3">
+        <label>New Photos:</label>
+      </div>
+      <div class="col-md-9">
+        <input type="file" multiple required>
+      </div>
+    </div>
+    <hr>
+
+
+    <button class="btn" (click)="deleteThisUser(returnedUser)">Delete Profile</button>
+
+  </div>
+</div>

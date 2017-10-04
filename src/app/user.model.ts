@@ -9,6 +9,7 @@ export class User
     public birthday: Date,
     public age: number,
     public sign: string,
+    public element: string,
     public location: string,
     public ageRangeMin: number,
     public ageRangeMax: number,

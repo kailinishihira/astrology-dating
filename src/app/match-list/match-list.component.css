@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1 {
   text-align: center;
   color: #ffffff;
@@ -13,15 +14,23 @@ h1 {
 }
 
 img {
+=======
+#user-photo {
+>>>>>>> 812746a8f1f71aa8e10d5290d71227aa5fd21c78
   width: 50%;
+  margin-top: 3%;
 }
 
-img:hover {
+#user-photo:hover {
   opacity: 0.8;
   width: 51%;
-
+  cursor: pointer;
 }
 
 .match-list-photos {
   text-align: center;
+}
+
+.card {
+  background-color: #EDD1D2;
 }
