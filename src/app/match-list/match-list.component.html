@@ -1,16 +1,16 @@
 <h1>Potential Matches</h1>
 <div class="container">
-  <div *ngFor="let user of users" class="card mb-3">
-    <div *ngIf ="user" class="card text-center">
-      <p class="match-list-photos"><img id="user-photo" (click) = "goToDetailPage(user)" class="card-img-top" src="{{user.image}}" alt="match image"></p>
+  <div class="card mb-3">
+    <div *ngIf ="currentPotentialMatch" class="card text-center">
+      <p class="match-list-photos"><img id="user-photo" (click) = "goToDetailPage(currentPotentialMatch)" class="card-img-top" src="{{currentPotentialMatch.image}}" alt="match image"></p>
       <button class=""><i class="fa fa-check  fa-3x" aria-hidden="true"></i></button>
       <button><i class="fa fa-times fa-3x" aria-hidden="true"></i></button>
       <div class="card-block">
-        <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
-        <h5>{{user.location}}</h5>
-        <h5>{{user.sign}}</h5>
-        <h6>{{user.gender}}</h6>
-        <p class="card-text"><strong>About:</strong> {{user.description}}</p>
+        <h4 class="card-title">{{currentPotentialMatch.currentPotentialMatchname}}, {{currentPotentialMatch.age}}</h4>
+        <h5>{{currentPotentialMatch.location}}</h5>
+        <h5>{{currentPotentialMatch.sign}}</h5>
+        <h6>{{currentPotentialMatch.gender}}</h6>
+        <p class="card-text"><strong>About:</strong> {{currentPotentialMatch.description}}</p>
       </div>
     </div>
   </div>
