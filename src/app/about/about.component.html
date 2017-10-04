@@ -1,7 +1,5 @@
-<h1>Horoscope Signs</h1>
+<h1>The Four Elements in Astrology</h1>
 <div class="container">
-
-  <h1>The Four Elements in Astrology</h1>
 
 <div *ngIf="click">
   <div *ngFor="let user of users | async | horoscopeSign: desiredSign" class="card mb-3">
@@ -23,7 +21,7 @@
   <p>Ruled by the quick and active Fire element, these three zodiac signs are all about initiation, enthusiasm, courage, and moving forward. They shine a bright light on life and command attention wherever they go. Always ready to instigate others and start something new, Aries, Leo, and Sagittarius are the true trailblazers of the zodiac.</p>
 
   <div class="card-deck">
-    <div class="card">
+    <div class="card fire">
       <p class="sign-photo"><img id="aries" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/aries.png" alt="Card image cap"></p>
       <div class="card-block">
         <h4 class="card-title">Aries</h4>
@@ -35,7 +33,7 @@
 
     </div>
 
-    <div class="card">
+    <div class="card fire">
       <p class="sign-photo"><img id="leo" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/leo.png" alt="Card image cap" ></p>
       <div class="card-block">
         <h4 class="card-title">Leo</h4>
@@ -44,7 +42,7 @@
         <p class="card-text"><strong>Weaknesses:</strong> arrogant, stubborn, self-centered, lazy, inflexible</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card fire">
       <p class="sign-photo"><img id="sagittarius" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/sagittarius.png" alt="Card image cap"></p>
       <div class="card-block">
         <h4 class="card-title">Sagittarius</h4>
@@ -60,7 +58,7 @@
   <p>Under the influence of the solid and practical Earth element, these three zodiac signs thrive on strength, determination, and practicality, and are at one with the physical world. They are focused and disciplined, eager to get the job done. Creating a true sense of foundation and security in the world, Taurus, Virgo, and Capricorn are the most pragmatic signs of the zodiac.</p>
 
   <div class="card-deck">
-    <div class="card">
+    <div class="card earth">
       <p class="sign-photo"><img id="taurus" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/taurus.png" alt="Card image cap" ></p>
       <div class="card-block">
         <h4 class="card-title">Taurus</h4>
@@ -69,7 +67,7 @@
         <p class="card-text"><strong>Weaknesses:</strong> stubborn, possessive, uncompromising</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card earth">
       <p class="sign-photo"><img id="virgo" (click)=onClickingSign($event.currentTarget.id) class="card-img-top"  src="resources/img/virgo.png" alt="Card image cap" ></p>
       <div class="card-block">
         <h4 class="card-title">Virgo</h4>
@@ -78,7 +76,7 @@
         <p class="card-text"><strong>Weaknesses:</strong> shyness, worry, overly critical of self and others, all work and no play</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card earth">
       <p class="sign-photo"><img id="capricorn" (click)=onClickingSign($event.currentTarget.id) class="card-img-top" (click)=onClickingSign($event.target.id) src="resources/img/capricorn.png" alt="Card image cap" id="capricorn"></p>
       <div class="card-block">
         <h4 class="card-title">Capricorn</h4>
@@ -95,7 +93,7 @@
   <p>Ruled by the clear and direct Air element, these three zodiac signs embrace truth, conversation, and ideas. They are communicators, mediators, and fighters of truth and justice. With sharp minds and a real sense of social awareness, Gemini, Libra, and Aquarius are the intellects of the zodiac.</p>
 
   <div class="card-deck">
-    <div class="card">
+    <div class="card air">
       <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id) src="resources/img/gemini.png" alt="Card image cap" id="gemini"></p>
       <div class="card-block">
         <h4 class="card-title">Gemini</h4>
@@ -104,7 +102,7 @@
         <p class="card-text"><strong>Weaknesses:</strong> nervous, inconsistent, indecisive</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card air">
       <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id)
       src="resources/img/libra.png" alt="Card image cap" id="libra"></p>
       <div class="card-block">
@@ -114,7 +112,7 @@
         <p class="card-text"><strong>Weaknesses:</strong> indecisive, avoids confrontations, will carry a grudge, self-pity</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card air">
       <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id) src="resources/img/aquarius.png" alt="Card image cap" id="aquarius"></p>
       <div class="card-block">
         <h4 class="card-title">Aquarius</h4>
@@ -131,7 +129,7 @@
   <p>With Water as their guiding force, these three zodiac signs have soft hearts, open minds, and old souls. They are lovers and nurturers, and live their lives with a deep understanding of what's happening around them -- the seen and the unseen. Sensitive, soulful, and connected, Cancer, Scorpio, and Pisces are the intuitives of the zodiac.</p>
 
   <div class="card-deck">
-    <div class="card">
+    <div class="card water">
       <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id) src="resources/img/cancer.png" alt="Card image cap" id="cancer"></p>
       <div class="card-block">
         <h4 class="card-title">Cancer</h4>
@@ -140,7 +138,7 @@
         <p class="card-text"><strong>Weaknesses:</strong> moody, pessimistic, suspicious, manipulative, insecure</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card water">
       <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id) src="resources/img/scorpio.png" alt="Card image cap" id="scorpio"></p>
       <div class="card-block">
         <h4 class="card-title">Scorpio</h4>
@@ -149,7 +147,7 @@
         <p class="card-text"><strong>Weaknesses:</strong> distrusting, jealous, secretive, violent</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card water">
       <p class="sign-photo"><img class="card-img-top" (click)=onClickingSign($event.currentTarget.id)  src="resources/img/pisces.png" alt="Card image cap" id="pisces"></p>
       <div class="card-block">
         <h4 class="card-title">Pisces</h4>
