@@ -19,7 +19,7 @@ h1 {
 
 #user-photo:hover {
   opacity: 0.8;
-  width: 51%;
+  width: 40%;
   cursor: pointer;
 }
 
@@ -29,4 +29,25 @@ h1 {
 
 .card {
   background-color: #EDD1D2;
+}
+
+.card-img-top {
+    width: 35%;
+    margin-top: 3%;
+}
+
+.fa-check {
+position: absolute;
+left: 84%;
+bottom: 64%;
+}
+
+.fa-times {
+  position: absolute;
+  right: 84%;
+  bottom: 64%;
+}
+
+button {
+  cursor: pointer;
 }
