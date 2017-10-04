@@ -11,6 +11,15 @@ h1 {
   background-size: cover;
   padding: 13%;
 }
+.match-list-title {
+  background: #dfe3ee;
+  padding: 20px;
+  opacity: .8;
+  color: #000000;
+  /*text-shadow: 2px 4px #2f0d0d;*/
+  letter-spacing: 25px;
+  font-size: 50px;
+}
 
 #user-photo {
   width: 50%;
