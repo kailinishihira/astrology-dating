@@ -11,6 +11,15 @@ h1 {
   background-size: cover;
   padding: 13%;
 }
+.match-list-title {
+  background: #dfe3ee;
+  padding: 20px;
+  opacity: .8;
+  color: #000000;
+  /*text-shadow: 2px 4px #2f0d0d;*/
+  letter-spacing: 25px;
+  font-size: 50px;
+}
 
 #user-photo {
   width: 50%;
@@ -19,7 +28,6 @@ h1 {
 
 #user-photo:hover {
   opacity: 0.8;
-  width: 51%;
   cursor: pointer;
 }
 
@@ -29,4 +37,25 @@ h1 {
 
 .card {
   background-color: #EDD1D2;
+}
+
+.card-img-top {
+    width: 35%;
+    margin-top: 3%;
+}
+
+.fa-check {
+position: absolute;
+left: 84%;
+bottom: 64%;
+}
+
+.fa-times {
+  position: absolute;
+  right: 84%;
+  bottom: 64%;
+}
+
+a{
+  cursor: pointer;
 }
