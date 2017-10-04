@@ -46,6 +46,12 @@ export class MatchListComponent implements OnInit {
   }
 
   like(likedUser) {
+    console.log(this.returnedUser);
+    this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
+    this.returnedUser.likes.push(likedUser.email);
+  }
+
+  dislike(likedUser) {
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
     this.returnedUser.likes.push(likedUser.email);
   }
