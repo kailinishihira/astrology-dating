@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
 
     let userName = event.target.elements[0].value;
-    let password = event.target.elements[1].value;
+    let password = event.target.elements[1].values;
 
     this.afAuth.auth.signInWithEmailAndPassword(userName, password).then(() => {
       this.errorMessage = '';

@@ -19,8 +19,10 @@ export class MatchListComponent implements OnInit {
   userEmail;
   userObject: User;
   returnedUser;
-  users: FirebaseListObservable<any[]>;
+  users;
   currentRoute: string = this.router.url;
+  currentPotentialMatch;
+  currentPotentialMatchIndex: number = 1;
 
   constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService) {
     this.afAuth.auth.onAuthStateChanged((myUser) =>{
@@ -35,7 +37,17 @@ export class MatchListComponent implements OnInit {
 
   ngOnInit() {
     this.findUser();
-    this.users = this.userService.getPotentialMatches();
+    this.userService.getPotentialMatches().subscribe((userList) => {
+      console.log(userList);
+      this.users = userList;
+      this.currentPotentialMatch = this.users[0];
+    });
+
+  }
+
+  like(likedUser) {
+    this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
+    this.returnedUser.likes.push(likedUser.email);
   }
 
   goToDetailPage(clickedUser) {
