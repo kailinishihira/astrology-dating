@@ -23,14 +23,15 @@ export class LoginComponent implements OnInit {
   logIn(event) {
     event.preventDefault();
 
-    let userName = event.target.elements.value[0];
-    let password = event.target.elements.value[1];
+    let userName = event.target.elements[0].value;
+    let password = event.target.elements[1].value;
 
     this.afAuth.auth.signInWithEmailAndPassword(userName, password).then(() => {
       this.errorMessage = '';
-      this.router.navigate(['']);
+      this.router.navigate(['/']);
     }).catch((error) => {
       this.errorMessage = error.message;
+      console.log(this.errorMessage);
     })
   }
 
