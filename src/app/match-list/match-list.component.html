@@ -1,21 +1,20 @@
 <h1>Potential Matches</h1>
 <div class="container">
-  <div *ngFor="let user of users | async " class="card mb-3">
-    <div *ngIf ="user" class="card text-center">
+  <div class="card mb-3">
+    <div *ngIf ="currentPotentialMatch" class="card text-center">
+      <p class="match-list-photos "><img id="user-photo" (click) = "goToDetailPage(currentPotentialMatch)" class="card-img-top img-border" src="{{currentPotentialMatch.image}}" alt="match image"></p>
 
-      <p class="match-list-photos "><img id="user-photo" (click) = "goToDetailPage(user)" class="card-img-top img-border" src="{{user.image}}" alt="match image"></p>
-
-      <a class=""><i class="fa fa-check fa-3x" aria-hidden="true"></i></a>
-      <a class=""><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+      <a (click)="like(currentPotentialMatch)" class=""><i class="fa fa-check fa-3x" aria-hidden="true"></i></a>
+      <a (click)="dislike(currentPotentialMatch)" class=""><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
       <div class="card-block">
-        <h6><em>*{{user.sign}}*</em></h6>
-        <h2 class="card-title">{{user.username}}, {{user.age}}</h2>
-        <h6><em>{{user.gender}} interested in {{user.interestedIn}} near {{user.location}}</em></h6>
+        <h6><em>*{{currentPotentialMatch.sign}}*</em></h6>
+        <h2 class="card-title">{{currentPotentialMatch.username}}, {{currentPotentialMatch.age}}</h2>
+        <h6><em>{{currentPotentialMatch.gender}} intersted in {{currentPotentialMatch.interestedIn}} near {{currentPotentialMatch.location}}</em></h6>
 
         <hr>
 
 
-        <p class="card-text"><em>{{user.description}}</em></p>
+        <p class="card-text"><em>{{currentPotentialMatch.description}}</em></p>
       </div>
     </div>
   </div>

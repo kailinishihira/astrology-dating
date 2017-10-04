@@ -1,24 +1,15 @@
 h1 {
   text-align: center;
-  color: #ffffff;
+  color: #6c6666;
   text-shadow: 2px 4px #2f0d0d;
   letter-spacing: 25px;
   font-size: 50px;
-  background-image: url("https://media.glamour.com/photos/56e1f9b462b398fa64cbea2e/master/w_1024,c_limit/sex-love-life-2016-01-LoveYou-main.jpg");
+  background-image: url("http://www.viralnovelty.net/wp-content/uploads/2017/03/02-20-things-happy-couples-do-laugh.jpg");
   background-position: bottom;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 13%;
-}
-.match-list-title {
-  background: #dfe3ee;
-  padding: 20px;
-  opacity: .8;
-  color: #000000;
-  /*text-shadow: 2px 4px #2f0d0d;*/
-  letter-spacing: 25px;
-  font-size: 50px;
+  padding: 4%;
 }
 
 .card-block {
@@ -45,9 +36,7 @@ h1 {
   cursor: pointer;
 }
 
-.match-list-photos {
-  text-align: center;
-}
+
 
 
 /*.card {
@@ -62,7 +51,7 @@ h1 {
 .fa-check {
 position: absolute;
 left: 84%;
-bottom: 64%;
+bottom: 55%;
 border: solid #b5b2b2 1px;
 padding:1%;
 border-radius: 50%;
@@ -73,7 +62,7 @@ color: #6c6666;
 .fa-times {
   position: absolute;
   right: 84%;
-  bottom: 64%;
+  bottom: 55%;
   border: solid #b5b2b2
  1px;
   padding: 11px 20px;
