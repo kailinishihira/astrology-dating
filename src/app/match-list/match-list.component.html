@@ -3,8 +3,8 @@
   <div class="card mb-3">
     <div *ngIf ="currentPotentialMatch" class="card text-center">
       <p class="match-list-photos"><img id="user-photo" (click) = "goToDetailPage(currentPotentialMatch)" class="card-img-top" src="{{currentPotentialMatch.image}}" alt="match image"></p>
-      <a class="" (click)="like()"><i class="fa fa-check  fa-3x" aria-hidden="true"></i></a>
-      <a (click)="dislike()"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+      <a class="" (click)="like(currentPotentialMatch)"><i class="fa fa-check  fa-3x" aria-hidden="true"></i></a>
+      <a (click)="dislike(currentPotentialMatch)"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
       <div class="card-block">
         <h4 class="card-title">{{currentPotentialMatch.username}}, {{currentPotentialMatch.age}}</h4>
         <h5>{{currentPotentialMatch.location}}</h5>

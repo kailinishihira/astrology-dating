@@ -1,5 +1,9 @@
 export class User
 {
+  public likes: string[] = [''];
+  public dislikes: string[] = [''];
+  public matches: string[] = [''];
+
   constructor(
     public username: string,
     public password: string,
@@ -13,8 +17,5 @@ export class User
     public location: string,
     public ageRangeMin: number,
     public ageRangeMax: number,
-    public description: string = '',
-    public likes: string[] = [],
-    public dislikes: string[] = [],
-    public matches: string[] = []){}
+    public description: string = ''){}
 }

@@ -19,6 +19,7 @@ export class MatchListComponent implements OnInit {
   userEmail;
   userObject: User;
   returnedUser;
+  returnedUserId: string;
   users;
   currentRoute: string = this.router.url;
   currentPotentialMatch;
@@ -46,22 +47,39 @@ export class MatchListComponent implements OnInit {
   }
 
   like(likedUser) {
-    console.log(this.returnedUser);
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
     this.returnedUser.likes.push(likedUser.email);
     //need logic to check if other person liked them
 
+    for(let i = 0; i < this.currentPotentialMatch.likes.length; i++) {
+      if (this.currentPotentialMatch.likes[i] == this.returnedUser.email) {
+        alert("It's a match!");
+      }
+    }
+
     //----------------------------------------------
 
-    this.database.object('astrology-dating/users/' + this.user.uid)
+    this.database.object('users/' + this.returnedUserId)
     .update({
       likes: this.returnedUser.likes
     });
   }
 
-  dislike(likedUser) {
+  dislike(dislikedUser) {
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
-    this.returnedUser.likes.push(likedUser.email);
+    this.returnedUser.dislikes.push(dislikedUser.email);
+    //need logic to check if other person liked them
+
+    //----------------------------------------------
+
+    this.database.object('users/' + this.returnedUserId)
+    .update({
+      dislikes: this.returnedUser.dislikes
+    });
+  }
+
+  match() {
+
   }
 
   goToDetailPage(clickedUser) {
@@ -74,6 +92,7 @@ export class MatchListComponent implements OnInit {
       data.forEach(myUser => {
         if (myUser.email === this.userEmail) {
           this.returnedUser = myUser;
+          this.returnedUserId = myUser.$key;
         }
       })
     });
