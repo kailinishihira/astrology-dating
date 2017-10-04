@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
       this.userEmail = this.user.email;
     }
     else {
-      this.router.navigate(['signup']);
+      this.router.navigate(['login']);
       }
     });
   }
