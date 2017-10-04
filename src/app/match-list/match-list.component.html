@@ -2,15 +2,20 @@
 <div class="container">
   <div class="card mb-3">
     <div *ngIf ="currentPotentialMatch" class="card text-center">
-      <p class="match-list-photos"><img id="user-photo" (click) = "goToDetailPage(currentPotentialMatch)" class="card-img-top" src="{{currentPotentialMatch.image}}" alt="match image"></p>
-      <a class="" (click)="like(currentPotentialMatch)"><i class="fa fa-check  fa-3x" aria-hidden="true"></i></a>
-      <a (click)="dislike(currentPotentialMatch)"><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+
+      <p class="match-list-photos "><img id="user-photo" (click) = "goToDetailPage(currentPotentialMatch)" class="card-img-top img-border" src="{{currentPotentialMatch.image}}" alt="match image"></p>
+
+      <a (click)="like(currentPotentialMatch)" class=""><i class="fa fa-check fa-3x" aria-hidden="true"></i></a>
+      <a (click)="dislike(currentPotentialMatch)" class=""><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
       <div class="card-block">
-        <h4 class="card-title">{{currentPotentialMatch.username}}, {{currentPotentialMatch.age}}</h4>
-        <h5>{{currentPotentialMatch.location}}</h5>
-        <h5>{{currentPotentialMatch.sign}}</h5>
-        <h6>{{currentPotentialMatch.gender}}</h6>
-        <p class="card-text"><strong>About:</strong> {{currentPotentialMatch.description}}</p>
+        <h6><em>*{{currentPotentialMatch.sign}}*</em></h6>
+        <h2 class="card-title">{{currentPotentialMatch.username}}, {{currentPotentialMatch.age}}</h2>
+        <h6><em>{{currentPotentialMatch.gender}} intersted in {{currentPotentialMatch.interestedIn}} near {{currentPotentialMatch.location}}</em></h6>
+
+        <hr>
+
+
+        <p class="card-text"><em>{{user.description}}</em></p>
       </div>
     </div>
   </div>

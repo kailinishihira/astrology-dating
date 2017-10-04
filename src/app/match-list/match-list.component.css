@@ -21,9 +21,23 @@ h1 {
   font-size: 50px;
 }
 
+.card-block {
+    color: #6c6666;
+}
+
+
+
 #user-photo {
   width: 50%;
   margin-top: 3%;
+  border-radius: 50%;
+
+}
+
+.img-border {
+  border: solid #b5b2b2 1px;
+  padding: 1%;
+
 }
 
 #user-photo:hover {
@@ -35,9 +49,10 @@ h1 {
   text-align: center;
 }
 
-.card {
+
+/*.card {
   background-color: #EDD1D2;
-}
+}*/
 
 .card-img-top {
     width: 35%;
@@ -48,12 +63,24 @@ h1 {
 position: absolute;
 left: 84%;
 bottom: 64%;
+border: solid #b5b2b2 1px;
+padding:1%;
+border-radius: 50%;
+color: #6c6666;
 }
+
 
 .fa-times {
   position: absolute;
   right: 84%;
   bottom: 64%;
+  border: solid #b5b2b2
+ 1px;
+  padding: 11px 20px;
+  border-radius: 50%;
+  width: 4.90rem;
+  height: 4.90rem;
+  color: #6c6666;
 }
 
 a{
