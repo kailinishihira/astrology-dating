@@ -1,14 +1,14 @@
 h1 {
   text-align: center;
   color: #6c6666;
-  text-shadow: 2px 4px #2f0d0d;
-  letter-spacing: 25px;
+  /*text-shadow: 2px 4px #2f0d0d;*/
+  letter-spacing: 15px;
   font-size: 50px;
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/ltCMCZy/out-of-focus-bokeh-shot-of-sky-and-sunshine-shining-through-leaves-makes-a-nice-abstract-background_m1z2gvmi__F0000.png");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
   padding: 4%;
 }
 
@@ -31,10 +31,38 @@ h1 {
 
 }
 
-#user-photo:hover {
+#user-photo:hover  {
   opacity: 0.8;
   cursor: pointer;
+
+
 }
+
+
+.hover-text {
+  color: #f1f1f1;
+  position: absolute;
+  font-size: 36px;
+  top: 39%;
+  left: 41%;
+  overflow: hidden;
+  display:none;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-weight: 200;
+
+}
+
+.img-border:hover + .hover-text{
+   display:block;
+
+
+}
+
+
+
+
+
 
 
 
@@ -44,8 +72,7 @@ h1 {
 }*/
 
 .card-img-top {
-    width: 35%;
-    margin-top: 3%;
+
 }
 
 .fa-check {
@@ -56,6 +83,15 @@ border: solid #b5b2b2 1px;
 padding:1%;
 border-radius: 50%;
 color: #6c6666;
+box-shadow: 1px 3px 3px #e6e5e5;
+}
+
+
+
+.grow1:hover {
+   transform: scale(1.1);
+   box-shadow: 3px 6px 6px #e6e5e5;
+
 }
 
 
@@ -70,6 +106,7 @@ color: #6c6666;
   width: 4.90rem;
   height: 4.90rem;
   color: #6c6666;
+  box-shadow: 1px 3px 3px #e6e5e5;
 }
 
 a{
