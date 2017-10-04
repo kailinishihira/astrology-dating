@@ -1,15 +1,17 @@
 h1 {
   text-align: center;
-  color: #ffffff;
+  color: #6c6666;
   text-shadow: 2px 4px #2f0d0d;
   letter-spacing: 25px;
   font-size: 50px;
-  background-image: url("https://www.demilked.com/magazine/wp-content/uploads/2014/02/gay-couples-all-love-is-equal-braden-summers-8.jpg");
+  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/ltCMCZy/out-of-focus-bokeh-shot-of-sky-and-sunshine-shining-through-leaves-makes-a-nice-abstract-background_m1z2gvmi__F0000.png");
+
+  /*background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);*/
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 13%;
+  padding: 4%;
 }
 .about {
   background-color: #D4D6DC;

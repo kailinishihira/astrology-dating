@@ -1,21 +1,24 @@
 <h1>My Profile</h1>
-<div class="container">
+<!-- <div class="container"> -->
   <div class="card">
     <div class="card-block">
       <p class="profile-photo"><img id="user-photo" class="card-img-top" src="{{returnedUser.image}}" alt="profile image"></p>
       <h4 class="card-title">{{returnedUser.username}}</h4>
+      <p class="card-text"><strong>Email:</strong> {{returnedUser.email}}</p>
       <p class="card-text"><strong>Sign:</strong> {{returnedUser.sign}}</p>
+      <p class="card-text"><strong>Element:</strong> {{returnedUser.element}}</p>
       <p class="card-text"><strong>Gender:</strong> {{returnedUser.gender}}</p>
       <p class="card-text"><strong>Age:</strong> {{returnedUser.age}}</p>
       <p class="card-text"><strong>Interested in:</strong> {{returnedUser.interestedIn}},  ({{returnedUser.ageRangeMin}} - {{returnedUser.ageRangeMax}} years old)</p>
       <p class="card-text"><strong>Location:</strong> {{returnedUser.location}}</p>
       <p class="card-text"><strong>About: </strong>{{returnedUser.description}}</p>
-      <button class="btn btn-default" (click)="editForm()">Edit Profile</button>
+      <button class="btn btn-default edit-btn" (click)="editForm()">Edit Profile</button>
     </div>
-  </div>
+  <!-- </div> -->
 
 
   <div *ngIf="showEditForm">
+    <hr>
     <h3>Edit Profile</h3>
     <div class="row">
       <div class="col-md-3">
@@ -53,39 +56,6 @@
       </div>
       <div class="col-md-9">
         <input [(ngModel)]="returnedUser.age" class="form-control">
-      </div>
-    </div>
-    <hr>
-
-    <div class="row">
-      <div class="col-md-3">
-        <label>New Birthday:</label>
-      </div>
-      <div class="col-md-9">
-        <input [(ngModel)]="returnedUser.username" class="form-control" type="date">
-      </div>
-    </div>
-    <hr>
-
-    <div class="row">
-      <div class="col-md-3">
-        <label>New Sign:</label>
-      </div>
-      <div class="col-md-9">
-        <select>
-          <option value="aries">Aries</option>
-          <option value="taurus">Taurus</option>
-          <option value="gemini">Gemini</option>
-          <option value="cancer">Cancer</option>
-          <option value="leo">Leo</option>
-          <option value="virgo">Virgo</option>
-          <option value="libra">Libra</option>
-          <option value="scorpio">Scorpio</option>
-          <option value="sagittarius">Sagittarius</option>
-          <option value="capricorn">Capricorn</option>
-          <option value="aquarius">Aquarius</option>
-          <option value="pisces">Pisces</option>
-         </select>
       </div>
     </div>
     <hr>
@@ -160,9 +130,6 @@
     </div>
     <hr>
 
-    <button class="btn" (click)="updateThisUser(returnedUser)">Save Updated Profile</button>
-
-
     <h3>Edit Photos</h3>
     <div class="row">
       <div class="col-md-3">
@@ -174,8 +141,15 @@
     </div>
     <hr>
 
+    <div class="row">
+      <button class="btn save-btn" (click)="updateThisUser(returnedUser)">Save Updated Profile</button>
+    </div>
 
-    <button class="btn" (click)="deleteThisUser(returnedUser)">Delete Profile</button>
+    <hr>
+
+    <div class="row">
+      <button class="btn delete-btn" (click)="deleteThisUser(returnedUser)">Delete Profile</button>
+    </div>
 
   </div>
 </div>

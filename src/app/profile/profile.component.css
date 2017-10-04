@@ -16,8 +16,51 @@ h3 {
   text-align: center;
   margin-top: 2%;
   margin-bottom: 2%;
+  letter-spacing: 3px;
 }
 
 button {
-  background-color: #EDD1D2;
+  background-color: #eb715b;
+  float: right;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+button:hover {
+  background-color: #f70449;
+  cursor: pointer;
+}
+
+.card {
+  padding: 35px;
+  margin: 30px 20% 200px 20%;
+  padding: 50px;
+  border: solid 2px;
+}
+
+p {
+  font-size: 18px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.save-btn {
+  background-color: #5bc0de;
+  cursor: pointer;
+  /*margin-left: 20px;*/
+  margin-top: 30px;
+  float: right;
+}
+.save-btn:hover {
+  background-color: #428bca;
+}
+
+.delete-btn {
+  background-color: #f70449;
+  cursor: pointer;
+  margin-top: 30px;
+  float: right;
 }
