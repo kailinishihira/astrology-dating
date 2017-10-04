@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     component: MatchDetailsComponent
   },
   {
-    path: 'filtered-signs',
+    path: 'filtered-signs/:desiredSign',
     component: FilteredSignsComponent
   },
   {

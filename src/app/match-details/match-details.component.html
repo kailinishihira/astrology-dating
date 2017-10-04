@@ -1,40 +1,42 @@
-<div *ngIf="matchToDisplay | async">
-  <h3>{{(matchToDisplay | async).username}}</h3>
+<div class="container">
 
-    <div id="myCarousel" class="carousel slide bg-inverse" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-          <img class="d-block img-fluid ml-auto mr-auto" src="{{(matchToDisplay | async).image}}" alt="First slide">
+  <div *ngIf="matchToDisplay | async">
+    <h3>{{(matchToDisplay | async).username}}</h3>
+
+      <div id="myCarousel" class="carousel slide bg-inverse" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <img class="d-block img-fluid ml-auto mr-auto" src="{{(matchToDisplay | async).image}}" alt="First slide">
+          </div>
         </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
 
+      <div class="card-block">
+        <p class="card text-center">Add caption...</p>
+      </div>
 
-    <div class="card-block">
-      <p class="card text-center">Add caption...</p>
-    </div>
-
-
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">{{(matchToDisplay | async).username}}</h4>
-      <h6 class="card-subtitle mb-2 text-muted">{{(matchToDisplay | async).sign}}</h6>
-      <p class="card-text"><strong>Gender:</strong> {{(matchToDisplay | async).gender}}</p>
-      <p class="card-text"><strong>Age:</strong> {{(matchToDisplay | async).age}}</p>
-      <p class="card-text"><strong>Interested in:</strong> {{(matchToDisplay | async).interestedIn}}, ({{(matchToDisplay | async).ageRangeMin}} - {{(matchToDisplay | async).ageRangeMax}} years old)</p>
-      <p class="card-text"><strong>Location:</strong> {{(matchToDisplay | async).location}}</p>
-      <p class="card-text"><strong>About {{(matchToDisplay | async).username}}:</strong> {{(matchToDisplay | async).description}}</p>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">{{(matchToDisplay | async).username}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{(matchToDisplay | async).sign}}</h6>
+        <p class="card-text"><strong>Gender:</strong> {{(matchToDisplay | async).gender}}</p>
+        <p class="card-text"><strong>Age:</strong> {{(matchToDisplay | async).age}}</p>
+        <p class="card-text"><strong>Interested in:</strong> {{(matchToDisplay | async).interestedIn}}, ({{(matchToDisplay | async).ageRangeMin}} - {{(matchToDisplay | async).ageRangeMax}} years old)</p>
+        <p class="card-text"><strong>Location:</strong> {{(matchToDisplay | async).location}}</p>
+        <p class="card-text"><strong>About {{(matchToDisplay | async).username}}:</strong> {{(matchToDisplay | async).description}}</p>
+      </div>
     </div>
   </div>
+
 </div>

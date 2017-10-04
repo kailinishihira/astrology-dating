@@ -1,11 +1,12 @@
-img {
+#user-photo {
   width: 50%;
+  margin-top: 3%;
 }
 
-img:hover {
+#user-photo:hover {
   opacity: 0.8;
   width: 51%;
-
+  cursor: pointer;
 }
 
 h2 {
@@ -14,4 +15,8 @@ h2 {
 
 .match-list-photos {
   text-align: center;
+}
+
+.card {
+  background-color: #EDD1D2;
 }
