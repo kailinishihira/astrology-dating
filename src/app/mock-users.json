@@ -10,7 +10,10 @@
    "location": "bellevue",
    "description": "Student at epicodus",
    "image": "resources/images/parul.jpg",
-   "id":"1"},
+   "id":"1",
+   "likes": [" "],
+   "dislikes": [" "],
+   "matches": [" "]},
    {
      "username": "lois",
       "password" : "abcde",
@@ -22,7 +25,10 @@
       "location": "bellevue",
       "description": "Student at epicodus",
       "image": "resources/images/lois.jpeg",
-      "id":"2"},
+      "id":"2",
+      "likes": [" "],
+      "dislikes": [" "],
+      "matches": [" "]},
       {
         "username": "kaili",
          "password" : "abcde",
@@ -34,6 +40,9 @@
          "location": "seattle",
          "description": "Student at epicodus",
          "image": "resources/images/kaili.jpg",
-         "id":"3"}
+         "id":"3",
+         "likes": [" "],
+         "dislikes": [" "],
+         "matches": [" "]}
    ]
 }

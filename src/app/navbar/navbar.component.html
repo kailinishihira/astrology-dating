@@ -12,7 +12,7 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="profile">Hello | {{returnedUser.username}}</a>
+        <a class="nav-link" *ngIf="returnedUser" routerLink="profile">Hello | {{returnedUser.username}}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="logout()">Log Out</a>
