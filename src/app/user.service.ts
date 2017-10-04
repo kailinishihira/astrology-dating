@@ -123,4 +123,15 @@ export class UserService {
     return this.database.object('/users/'+ userId);
   }
 
+
+  updateProfile(updateUser){
+    var userEntryInFirebase = getUserByEmail(updateUser.email);
+    userEntryInFirebase.update({
+      age: userEntryInFirebase.age;
+    })
+  }
+
+
+
+
 }

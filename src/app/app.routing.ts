@@ -42,6 +42,10 @@ const appRoutes: Routes = [
   {
     path: 'start-matches',
     component: StartMatchesComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 
