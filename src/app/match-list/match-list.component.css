@@ -19,7 +19,6 @@ h1 {
 
 #user-photo:hover {
   opacity: 0.8;
-  width: 40%;
   cursor: pointer;
 }
 
@@ -48,6 +47,6 @@ bottom: 64%;
   bottom: 64%;
 }
 
-button {
+a{
   cursor: pointer;
 }
