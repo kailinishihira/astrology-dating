@@ -1,3 +1,17 @@
+h1 {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 4px #2f0d0d;
+  letter-spacing: 25px;
+  font-size: 50px;
+  background-image: url("https://media.glamour.com/photos/56e1f9b462b398fa64cbea2e/master/w_1024,c_limit/sex-love-life-2016-01-LoveYou-main.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 13%;
+}
+
 img {
   width: 50%;
 }
@@ -6,10 +20,6 @@ img:hover {
   opacity: 0.8;
   width: 51%;
 
-}
-
-h2 {
-  text-align: center;
 }
 
 .match-list-photos {

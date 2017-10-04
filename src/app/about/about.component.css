@@ -1,7 +1,21 @@
+h1 {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 4px #2f0d0d;
+  letter-spacing: 25px;
+  font-size: 50px;
+  background-image: url("http://hdwallpapersrocks.com/wp-content/uploads/2013/10/So-sweet-and-happy-couple-love-photo.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 13%;
+}
+
 h3 {
   text-align: center;
-  margin-top: 2%;
-  margin-bottom: 1%;
+  margin-top: 5%;
+  margin-bottom: 2%;
 }
 
 img {
