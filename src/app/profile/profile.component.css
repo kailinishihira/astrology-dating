@@ -1,5 +1,6 @@
 h1 {
   text-align: center;
+  letter-spacing: 5px;
   margin-top: 2%;
   margin-bottom: 2%;
 }
@@ -8,4 +9,8 @@ h3 {
   text-align: center;
   margin-top: 2%;
   margin-bottom: 2%;
+}
+
+button {
+  background-color: #EDD1D2;
 }
