@@ -4,7 +4,7 @@ h1 {
   text-shadow: 2px 4px #2f0d0d;
   letter-spacing: 25px;
   font-size: 50px;
-  background-image: url("http://www.wearandcheer.com/wp-content/uploads/2015/06/happy-couple-wearandcheer.com_.jpg");
+  background-image: url("https://www.demilked.com/magazine/wp-content/uploads/2014/02/gay-couples-all-love-is-equal-braden-summers-8.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -14,7 +14,10 @@ h1 {
 .about {
   background-color: #D4D6DC;
 }
-
+.cancer-img {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
 
 h3 {
   text-align: center;
