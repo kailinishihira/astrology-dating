@@ -27,7 +27,8 @@ export class SignupComponent implements OnInit {
     let userAge = Math.floor(((Date.now() - (new Date(userBirthday)).getTime()) / 1000 / 60 / 60 / 24 / 365.25));
     let userSign = this.calculateSign(userBirthday);
     console.log(userSign);
-    let userElement = "Earth";
+    let userElement = this.calculateElement(userSign);
+    console.log(userElement);
     let userLocation = event.target.elements[6].value;
     let userAgeRangeMin = event.target.elements[7].value;
     let userAgeRangeMax = event.target.elements[8].value;
@@ -72,4 +73,17 @@ export class SignupComponent implements OnInit {
    sign = "Pisces";
    return sign;
  }
+  calculateElement(sign): string
+  {
+    let elementCalculated: string;
+    if(sign === "Aries" || sign === "Leo" || sign === "Sagittarius")
+    elementCalculated = "Fire";
+    else if( sign === "Pieces" || sign === "Cancer" || sign === "Scorpio")
+    elementCalculated = "Water";
+    else if( sign === "Taurus" || sign === "Virgo" || sign === "Capricorn")
+    elementCalculated = "Earth";
+    else if( sign === "Gemini" || sign === "Libra" || sign === "Aquarius")
+    elementCalculated = "Air";
+    return elementCalculated;
+  }
 }
