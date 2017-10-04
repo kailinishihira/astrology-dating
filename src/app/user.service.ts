@@ -7,7 +7,7 @@ import * as firebaseStorage from 'firebase/storage';
 import { Router } from '@angular/router';
 import { User } from './user.model';
 import { FirebaseApp } from 'angularfire2';
-
+import {ElementPipe} from './element.pipe';
 
 @Injectable()
 export class UserService {
@@ -34,7 +34,7 @@ export class UserService {
           console.log(error.message);
         })
       }
-        this.router.navigate(['']);
+        this.router.navigate(['/start-matches']);
     })
   }
 

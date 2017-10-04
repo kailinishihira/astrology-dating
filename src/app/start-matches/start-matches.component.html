@@ -1,4 +1,8 @@
-<h2>Potential Matches</h2>
+<h3>Your Astrology Sign is : {{user.sign}}</h3>
+<h4>Your Astrology Element is :{{user.element}}</h4>
+<p>about fire element</p>
+
+<button type="button" name="button">See Your Matches</button>
 
 <div *ngFor="let user of users | async | element: sign" class="card mb-3">
   <div *ngIf ="user" class="card text-center">
