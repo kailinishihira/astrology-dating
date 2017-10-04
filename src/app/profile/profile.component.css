@@ -1,7 +1,15 @@
 h1 {
   text-align: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  color: #ffffff;
+  text-shadow: 2px 4px #2f0d0d;
+  letter-spacing: 25px;
+  font-size: 50px;
+  background-image: url("http://www.viralnovelty.net/wp-content/uploads/2017/03/02-20-things-happy-couples-do-laugh.jpg");
+  background-position: bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 13%;
 }
 
 h3 {
