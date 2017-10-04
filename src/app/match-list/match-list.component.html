@@ -1,16 +1,21 @@
 <h1>Potential Matches</h1>
 <div class="container">
-  <div *ngFor="let user of users | async" class="card mb-3">
+  <div *ngFor="let user of users | async " class="card mb-3">
     <div *ngIf ="user" class="card text-center">
-      <p class="match-list-photos"><img id="user-photo" (click) = "goToDetailPage(user)" class="card-img-top" src="{{user.image}}" alt="match image"></p>
-      <a class=""><i class="fa fa-check  fa-3x" aria-hidden="true"></i></a>
-      <a><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
+
+      <p class="match-list-photos "><img id="user-photo" (click) = "goToDetailPage(user)" class="card-img-top img-border" src="{{user.image}}" alt="match image"></p>
+
+      <a class=""><i class="fa fa-check fa-3x" aria-hidden="true"></i></a>
+      <a class=""><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
       <div class="card-block">
-        <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
-        <h5>{{user.location}}</h5>
-        <h5>{{user.sign}}</h5>
-        <h6>{{user.gender}}</h6>
-        <p class="card-text"><strong>About:</strong> {{user.description}}</p>
+        <h6><em>*{{user.sign}}*</em></h6>
+        <h2 class="card-title">{{user.username}}, {{user.age}}</h2>
+        <h6><em>{{user.gender}} intersted in {{user.interestedIn}} near {{user.location}}</em></h6>
+
+        <hr>
+
+
+        <p class="card-text"><em>{{user.description}}</em></p>
       </div>
     </div>
   </div>
