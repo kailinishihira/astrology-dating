@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { User } from '../user.model';
@@ -14,7 +14,6 @@ import { Observable } from 'rxjs/Observable';
   providers: [UserService]
 })
 export class ProfileComponent implements OnInit {
-  @Input() selectedUser;
   user;
   userEmail;
   returnedUser;

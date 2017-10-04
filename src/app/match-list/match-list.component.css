@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  color: #ffffff;
+  color: #6c6666;
   text-shadow: 2px 4px #2f0d0d;
   letter-spacing: 25px;
   font-size: 50px;
@@ -9,21 +9,26 @@ h1 {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 13%;
+  padding: 4%;
 }
-.match-list-title {
-  background: #dfe3ee;
-  padding: 20px;
-  opacity: .8;
-  color: #000000;
-  /*text-shadow: 2px 4px #2f0d0d;*/
-  letter-spacing: 25px;
-  font-size: 50px;
+
+.card-block {
+    color: #6c6666;
 }
+
+
 
 #user-photo {
   width: 50%;
   margin-top: 3%;
+  border-radius: 50%;
+
+}
+
+.img-border {
+  border: solid #b5b2b2 1px;
+  padding: 1%;
+
 }
 
 #user-photo:hover {
@@ -31,13 +36,12 @@ h1 {
   cursor: pointer;
 }
 
-.match-list-photos {
-  text-align: center;
-}
 
-.card {
+
+
+/*.card {
   background-color: #EDD1D2;
-}
+}*/
 
 .card-img-top {
     width: 35%;
@@ -47,13 +51,25 @@ h1 {
 .fa-check {
 position: absolute;
 left: 84%;
-bottom: 64%;
+bottom: 55%;
+border: solid #b5b2b2 1px;
+padding:1%;
+border-radius: 50%;
+color: #6c6666;
 }
+
 
 .fa-times {
   position: absolute;
   right: 84%;
-  bottom: 64%;
+  bottom: 55%;
+  border: solid #b5b2b2
+ 1px;
+  padding: 11px 20px;
+  border-radius: 50%;
+  width: 4.90rem;
+  height: 4.90rem;
+  color: #6c6666;
 }
 
 a{
