@@ -25,6 +25,7 @@ export class MatchListComponent implements OnInit {
   currentRoute: string = this.router.url;
   currentPotentialMatch;
   currentPotentialMatchIndex: number = 0;
+  showMatchForm: boolean = false;
 
   constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService, private database: AngularFireDatabase) {
     this.afAuth.auth.onAuthStateChanged((myUser) =>{
@@ -47,14 +48,13 @@ export class MatchListComponent implements OnInit {
   }
 
   like(likedUser) {
-    console.log(this.currentPotentialMatch);
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
-    console.log(this.currentPotentialMatch);
     this.returnedUser.likes.push(likedUser.email);
 
     //checking to see if they also like you
     for(let i = 0; i < likedUser.likes.length; i++) {
       if (likedUser.likes[i] == this.returnedUser.email) {
+        this.showMatchForm = true;
         //if both like each other add to matched list
         this.returnedUser.matches.push(likedUser.email);
         this.database.object('users/' + this.returnedUserId)
