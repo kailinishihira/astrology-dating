@@ -1,7 +1,5 @@
+<h1><span class="match-list-title">Potential Matches</span></h1>
 <div class="container">
-
-  <h2>Potential Matches</h2>
-
   <div *ngFor="let user of users | async" class="card mb-3">
     <div *ngIf ="user" class="card text-center">
       <p class="match-list-photos"><img id="user-photo" (click) = "goToDetailPage(user)" class="card-img-top" src="{{user.image}}" alt="match image"></p>
