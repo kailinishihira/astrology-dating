@@ -16,6 +16,29 @@ h3 {
   text-align: center;
   margin-top: 5%;
   margin-bottom: 2%;
+  font-size: 35px;
+  letter-spacing: 3px;
+}
+
+h3:first-of-type {
+  background: #ae0001;
+  padding: 7px;
+  letter-spacing: 4px;
+}
+h3:nth-of-type(2) {
+  background: #5cb85c;
+  padding: 7px;
+  letter-spacing: 4px;
+}
+h3:nth-of-type(3) {
+  background: #dfe3ee;
+  padding: 7px;
+  letter-spacing: 4px;
+}
+h3:nth-of-type(4) {
+  background: #5bc0de;
+  padding: 7px;
+  letter-spacing: 4px;
 }
 
 img {
@@ -27,5 +50,13 @@ img {
 }
 
 h5 {
+  text-align: center;
+}
+
+.card {
+  padding: 20px;
+  margin-top: 20px;
+}
+.card-title, .card-subtitle {
   text-align: center;
 }
