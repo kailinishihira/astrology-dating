@@ -42,8 +42,9 @@ h1 {
 .hover-text {
   color: #f1f1f1;
   position: absolute;
+  font-size: 36px;
   top: 39%;
-  left: 43%;
+  left: 41%;
   overflow: hidden;
   display:none;
   cursor: pointer;

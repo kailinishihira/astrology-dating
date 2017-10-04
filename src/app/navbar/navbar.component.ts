@@ -14,6 +14,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class NavbarComponent implements OnInit {
   user;
+  userFirebase;
   userEmail;
   userObject: User;
   returnedUser;
@@ -21,13 +22,14 @@ export class NavbarComponent implements OnInit {
   currentRoute: string = this.router.url;
 
   constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService) {
+    this.userFirebase = this.afAuth.authState;
     this.afAuth.auth.onAuthStateChanged((myUser) =>{
     if (myUser) {
       this.user = myUser;
       this.userEmail = this.user.email;
     }
     else {
-      this.router.navigate(['signup']);
+      this.router.navigate(['login']);
       }
     });
   }
