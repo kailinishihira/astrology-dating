@@ -3,8 +3,8 @@
   <div *ngFor="let user of users | async" class="card mb-3">
     <div *ngIf ="user" class="card text-center">
       <p class="match-list-photos"><img id="user-photo" (click) = "goToDetailPage(user)" class="card-img-top" src="{{user.image}}" alt="match image"></p>
-      <button class=""><i class="fa fa-check  fa-3x" aria-hidden="true"></i></button>
-      <button><i class="fa fa-times fa-3x" aria-hidden="true"></i></button>
+      <a class=""><i class="fa fa-check  fa-3x" aria-hidden="true"></i></a>
+      <a><i class="fa fa-times fa-3x" aria-hidden="true"></i></a>
       <div class="card-block">
         <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
         <h5>{{user.location}}</h5>
