@@ -1,5 +1,9 @@
 h1 {
   text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 4px #2f0d0d;
+  letter-spacing: 25px;
+  font-size: 50px;
   background-image: url("http://www.viralnovelty.net/wp-content/uploads/2017/03/02-20-things-happy-couples-do-laugh.jpg");
   background-position: bottom;
   background-attachment: fixed;
@@ -17,14 +21,13 @@ h1 {
   font-size: 50px;
 }
 
-img #user-photo {
+#user-photo {
   width: 50%;
   margin-top: 3%;
 }
 
 #user-photo:hover {
   opacity: 0.8;
-  width: 51%;
   cursor: pointer;
 }
 
@@ -34,4 +37,25 @@ img #user-photo {
 
 .card {
   background-color: #EDD1D2;
+}
+
+.card-img-top {
+    width: 35%;
+    margin-top: 3%;
+}
+
+.fa-check {
+position: absolute;
+left: 84%;
+bottom: 64%;
+}
+
+.fa-times {
+  position: absolute;
+  right: 84%;
+  bottom: 64%;
+}
+
+a{
+  cursor: pointer;
 }
