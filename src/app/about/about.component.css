@@ -4,7 +4,7 @@ h1 {
   text-shadow: 2px 4px #2f0d0d;
   letter-spacing: 25px;
   font-size: 50px;
-  background-image: url("http://hdwallpapersrocks.com/wp-content/uploads/2013/10/So-sweet-and-happy-couple-love-photo.jpg");
+  background-image: url("http://www.wearandcheer.com/wp-content/uploads/2015/06/happy-couple-wearandcheer.com_.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -59,4 +59,7 @@ h5 {
 }
 .card-title, .card-subtitle {
   text-align: center;
+}
+.card-deck:last-of-type {
+  margin-bottom: 15%;
 }
