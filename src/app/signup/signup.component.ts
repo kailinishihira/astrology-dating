@@ -26,6 +26,7 @@ export class SignupComponent implements OnInit {
     let userBirthday = event.target.elements[5].value;
     let userAge = Math.floor(((Date.now() - (new Date(userBirthday)).getTime()) / 1000 / 60 / 60 / 24 / 365.25));
     let userSign = "Taurus";
+    let userElement = "Earth";
     let userLocation = event.target.elements[6].value;
     let userAgeRangeMin = event.target.elements[7].value;
     let userAgeRangeMax = event.target.elements[8].value;

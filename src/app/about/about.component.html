@@ -1,5 +1,22 @@
 <div class="container">
 
+  <h1>The Four Elements in Astrology</h1>
+
+<div *ngIf="click">
+  <div *ngFor="let user of users | async | horoscopeSign: desiredSign" class="card mb-3">
+    <div *ngIf ="user" class="card text-center">
+      <p class="match-list-photos"><img class="card-img-top" src="{{user.image}}" alt="match image"></p>
+      <div class="card-block">
+        <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
+        <h5>{{user.location}}</h5>
+        <h5>{{user.sign}}</h5>
+        <h6>{{user.gender}}</h6>
+        <p class="card-text"><strong>About:</strong> {{user.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
   <h3>Fire Signs</h3>
   <h5>The Trailblazers of the Zodiac</h5>
   <p>Ruled by the quick and active Fire element, these three zodiac signs are all about initiation, enthusiasm, courage, and moving forward. They shine a bright light on life and command attention wherever they go. Always ready to instigate others and start something new, Aries, Leo, and Sagittarius are the true trailblazers of the zodiac.</p>
@@ -142,16 +159,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div *ngFor="let user of users | async | horoscopeSign: desiredSign" class="card mb-3">
-  <div *ngIf ="user" class="card text-center">
-    <p class="match-list-photos"><img class="card-img-top" src="{{user.image}}" alt="match image"></p>
-    <div class="card-block">
-      <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
-      <h5>{{user.location}}</h5>
-      <h5>{{user.sign}}</h5>
-      <h6>{{user.gender}}</h6>
-      <p class="card-text"><strong>About:</strong> {{user.description}}</p>
-    </div>
-  </div>
-</div> -->

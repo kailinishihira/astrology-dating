@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { MatchDetailsComponent } from './match-details/match-details.component';
 import { FilteredSignsComponent } from './filtered-signs/filtered-signs.component';
 import { LoginComponent } from './login/login.component';
+import { StartMatchesComponent } from './start-matches/start-matches.component';
 
 
 const appRoutes: Routes = [
@@ -31,12 +32,16 @@ const appRoutes: Routes = [
     component: MatchDetailsComponent
   },
   {
-    path: 'filtered-signs',
+    path: 'filtered-signs/:desiredSign',
     component: FilteredSignsComponent
   },
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'start-matches',
+    component: StartMatchesComponent
   }
 ];
 

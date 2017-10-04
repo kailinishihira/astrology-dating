@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { User } from '../user.model';
 import { UserService } from '../user.service';
-import {HoroscopeSignPipe} from '../horoscope-sign.pipe';
+import { HoroscopeSignPipe } from '../horoscope-sign.pipe';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-filtered-signs',
@@ -12,15 +14,17 @@ import {HoroscopeSignPipe} from '../horoscope-sign.pipe';
   providers: [UserService]
 })
 export class FilteredSignsComponent implements OnInit {
-
-  desiredSign: string = "allSigns";
+  desiredSign: string;
   users: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private route : ActivatedRoute, private location: Location, private router: Router, private userService: UserService) { }
 
   ngOnInit() {
-      this.users = this.userService.getPotentialMatches();
+    this.route.params.forEach((urlParameters) => {
+    this.desiredSign = urlParameters['desiredSign'];
+    })
+    this.users = this.userService.getPotentialMatches();
   }
 
   goToDetailPage(clickedUser) {

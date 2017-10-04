@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+}
+
+img {
+  width: 50%;
+  margin-top: 3%;
+}
+
+img:hover {
+  width: 51%;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.card {
+  background-color: #EDD1D2;
+}

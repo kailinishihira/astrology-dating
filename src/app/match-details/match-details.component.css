@@ -1,7 +1,6 @@
-img {
-  width: 50%;
+.carousel-inner {
+  background-color: #EDD1D2;
 }
-
 .image {
   text-align: center;
 }

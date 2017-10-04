@@ -1,16 +1,20 @@
-<h2>Potential Matches</h2>
+<div class="container">
 
-<div *ngFor="let user of users | async" class="card mb-3">
-  <div *ngIf ="user" class="card text-center">
-    <p class="match-list-photos"><img (click) = "goToDetailPage(user)" class="card-img-top" src="{{user.image}}" alt="match image"></p>
-    <div class="card-block">
-      <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
-      <h5>{{user.location}}</h5>
-      <h5>{{user.sign}}</h5>
-      <h6>{{user.gender}}</h6>
-      <p class="card-text"><strong>About:</strong> {{user.description}}</p>
+  <h2>Potential Matches</h2>
+
+  <div *ngFor="let user of users | async" class="card mb-3">
+    <div *ngIf ="user" class="card text-center">
+      <p class="match-list-photos"><img id="user-photo" (click) = "goToDetailPage(user)" class="card-img-top" src="{{user.image}}" alt="match image"></p>
+      <div class="card-block">
+        <h4 class="card-title">{{user.username}}, {{user.age}}</h4>
+        <h5>{{user.location}}</h5>
+        <h5>{{user.sign}}</h5>
+        <h6>{{user.gender}}</h6>
+        <p class="card-text"><strong>About:</strong> {{user.description}}</p>
+      </div>
     </div>
   </div>
+
 </div>
 
 <div class="test">
