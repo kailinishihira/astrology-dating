@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { User } from '../user.model';
 import { UserService} from '../user.service';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -24,7 +24,7 @@ export class MatchListComponent implements OnInit {
   currentPotentialMatch;
   currentPotentialMatchIndex: number = 1;
 
-  constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService) {
+  constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService, private database: AngularFireDatabase) {
     this.afAuth.auth.onAuthStateChanged((myUser) =>{
     if (myUser) {
       this.user = myUser;
@@ -49,6 +49,14 @@ export class MatchListComponent implements OnInit {
     console.log(this.returnedUser);
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
     this.returnedUser.likes.push(likedUser.email);
+    //need logic to check if other person liked them
+
+    //----------------------------------------------
+
+    this.database.object('astrology-dating/users/' + this.user.uid)
+    .update({
+      likes: this.returnedUser.likes
+    });
   }
 
   dislike(likedUser) {
