@@ -133,8 +133,8 @@ export class UserService {
 
 
   deleteProfile(deleteUser){
-    var userEntryInFirebase = this.getUserByEmail(deleteUser.$key);
-    
+    // var userEntryInFirebase = this.getUserByEmail(deleteUser.$key);
+    // userEntryInFirebase.remove();
   }
 
 
