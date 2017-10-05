@@ -48,7 +48,7 @@ h1 {
 
 .img-border:hover + .hover-text{
    display:block;
-    
+   pointer-events: none;
 
 }
 /*.card {
