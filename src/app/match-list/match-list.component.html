@@ -8,7 +8,7 @@
       </div>
 
       <a (click)="like(currentPotentialMatch)"><i class="fa fa-check fa-3x grow1" aria-hidden="true"></i></a>
-      <a (click)="dislike(currentPotentialMatch)"><i class="fa fa-times fa-3x grow1" aria-hidden="true"></i></a>
+      <a (click)="dislike(currentPotentialMatch)"><i class="fa fa-times fa-3x grow2" aria-hidden="true"></i></a>
       <div class="card-block">
         <h6><em>*{{currentPotentialMatch.sign}}*</em></h6>
         <h2 class="card-title">{{currentPotentialMatch.username}}, {{currentPotentialMatch.age}}</h2>
@@ -24,8 +24,8 @@
   <div *ngIf="showMatchForm" class="matchForm">
     <h3>You and {{matchedPerson.username}} have been matched!</h3>
     <div class="buttons">
-      <button (click)="close()" class="btn">Close</button>
-      <button (click)="chat()" routerLink="chat" class="btn">Chat</button>
+      <button (click)="close()" class="btn close-button">Close</button>
+      <button (click)="chat()" routerLink="chat" class="btn chat-button">Chat</button>
     </div>
   </div>
 </div>

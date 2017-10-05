@@ -1,14 +1,17 @@
 <div class="container">
-  <img class="broken-heart" src="https://pre00.deviantart.net/5090/th/pre/i/2017/028/0/c/broken_heart_cutie_mark_by_ninjashorty-dax3sgg.png">
+  <h2>Currently under construction</h2>
+  <div class="button">
+    <button class="btn btn-success" routerLink="">Back to Matches</button>
+  </div>
 
-  <p>Currently under construction</p>
-
-  <button class="btn btn-info" routerLink="">Back to Matches</button>
-</div>
-
-<div *ngIf="matchedListObservable | async" class="matched-section">
-  <div *ngFor="let match of matchedList">
-    <li (click)="openChat(match)">{{match.username}}</li>
+  <div *ngIf="matchedListObservable | async" class="card matched-section">
+    <div *ngFor="let match of matchedList">
+      <div class="card card-outline-primary mb-3 text-center">
+        <div class="card-block">
+          <p class="match-names"(click)="openChat(match)">{{match.username}}</p>
+          <button class="btn btn-info">Send Chat</button>
+      </div>
+    </div>
   </div>
 </div>
 
