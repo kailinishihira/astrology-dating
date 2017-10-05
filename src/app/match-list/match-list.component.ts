@@ -135,6 +135,7 @@ export class MatchListComponent implements OnInit {
     .update({
       likes: this.returnedUser.likes
     });
+    this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
   }
 
   dislike(dislikedUser) {

@@ -12,9 +12,9 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" *ngIf="returnedUser" routerLink="profile">Hello | {{returnedUser.username}}</a>
+        <a class="nav-link" *ngIf="userFirebase | async" routerLink="profile">Hello | {{returnedUser.username}}</a>
       </li>
-      <li *ngIf="returnedUser" class="nav-item">
+      <li *ngIf="userFirebase | async" class="nav-item">
         <a class="nav-link" (click)="logout()">Log Out</a>
       </li>
     </ul>
