@@ -81,7 +81,7 @@ export class SignupComponent implements OnInit {
    sign = "Capricorn";
    else if( (( month === 1) && (day >= 21 && day <= 31)) || (( month === 2) && (day >= 1 && day <= 19)))
    sign = "Aquarius";
-   else ( (( month === 2) && (day >= 20 && day <= 31)) || (( month === 3) && (day >= 1 && day <= 20)))
+   else if( (( month === 2) && (day >= 20 && day <= 31)) || (( month === 3) && (day >= 1 && day <= 20)))
    sign = "Pisces";
    return sign;
  }

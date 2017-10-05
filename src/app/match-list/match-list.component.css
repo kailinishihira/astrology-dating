@@ -102,3 +102,30 @@ border-radius: 10px;
 padding: 40px;
 z-index: 99 !important;
 }
+
+h3 {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  letter-spacing: 5px;
+}
+.buttons {
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 60px 10px 60px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  /*background-color: */
+}
+
+.close-button {
+  background-color: #ac0f0f;
+}
+
+.chat-button {
+  margin-left: 4%;
+  background-color: #5db1e2;
+}
