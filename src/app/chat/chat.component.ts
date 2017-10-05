@@ -22,6 +22,7 @@ export class ChatComponent implements OnInit {
   matchedListObservable: FirebaseListObservable<any[]>;
   matchChat = null;
   globalChatLog = ['---'];
+  firebaseUser;
 
   constructor(private afAuth: AngularFireAuth, private router: Router, private userService: UserService, private database: AngularFireDatabase, private storage: FirebaseApp) {
     this.afAuth.auth.onAuthStateChanged((myUser) => {
@@ -62,12 +63,15 @@ export class ChatComponent implements OnInit {
 
   sendMessage(event) {
     event.preventDefault();
-    console.log(this.userObject.chatLog);
-    console.log(this.matchChat.chatLog.push);
     this.userObject.chatLog.push(event.target.elements[0].value);
     this.matchChat.chatLog.push(event.target.elements[0].value);
+    event.target.elements[0].value = '';
     this.globalChatLog = this.userObject.chatLog;
 
+    this.firebaseUser = this.afAuth.auth.currentUser;
+    console.log(this.user);
+    console.log(this.firebaseUser);
+    console.log(this.userObject.chatLog);
     this.user.update({
       chatLog: this.userObject.chatLog
     });

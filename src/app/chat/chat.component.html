@@ -8,8 +8,8 @@
     <div *ngFor="let match of matchedList">
       <div class="card card-outline-primary mb-3 text-center">
         <div class="card-block">
-          <p class="match-names"(click)="openChat(match)">{{match.username}}</p>
-          <button class="btn btn-info">Send Chat</button>
+          <p class="match-names">{{match.username}}</p>
+          <button (click)="openChat(match)" class="btn btn-info">Send Chat</button>
       </div>
     </div>
   </div>
@@ -22,8 +22,6 @@
       <p>{{message}}</p>
     </div>
   </div>
-
-
 
 
   <form (submit)="sendMessage($event)">>
