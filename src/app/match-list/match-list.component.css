@@ -1,14 +1,14 @@
 h1 {
   text-align: center;
   color: #6c6666;
-  /*text-shadow: 2px 4px #2f0d0d;*/
+  text-shadow: 2px 4px #2f0d0d;
   letter-spacing: 15px;
   font-size: 50px;
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/ltCMCZy/out-of-focus-bokeh-shot-of-sky-and-sunshine-shining-through-leaves-makes-a-nice-abstract-background_m1z2gvmi__F0000.png");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;*/
+  background-size: cover;
   padding: 4%;
 }
 
