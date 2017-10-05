@@ -8,6 +8,6 @@
 
 <div *ngIf="matchedListObservable | async" class="matched-section">
   <div *ngFor="let match of matchedList">
-    <li>{{match.username}}</li>
+    <li (click)="openChat(match)">{{match.username}}</li>
   </div>
 </div>
