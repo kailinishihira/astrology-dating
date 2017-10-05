@@ -11,3 +11,20 @@
     <li (click)="openChat(match)">{{match.username}}</li>
   </div>
 </div>
+
+
+<div *ngIf="matchChat">
+  <div class="match-log">
+    <div *ngFor="let message of globalChatLog">
+      <p>{{message}}</p>
+    </div>
+  </div>
+
+
+
+
+  <form (submit)="sendMessage($event)">>
+    <input type="text">
+    <button type="submit">Send</button>
+  </form>
+</div>

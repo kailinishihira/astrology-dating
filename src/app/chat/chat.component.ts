@@ -20,6 +20,8 @@ export class ChatComponent implements OnInit {
   userObject;
   matchedList:string[] = [];
   matchedListObservable: FirebaseListObservable<any[]>;
+  matchChat = null;
+  globalChatLog = ['---'];
 
   constructor(private afAuth: AngularFireAuth, private router: Router, private userService: UserService, private database: AngularFireDatabase, private storage: FirebaseApp) {
     this.afAuth.auth.onAuthStateChanged((myUser) => {
@@ -41,7 +43,36 @@ export class ChatComponent implements OnInit {
         })
       })
       this.matchedListObservable = this.userService.newUser;
-    },2000)
+    },1500)
+  }
+
+  openChat(match) {
+    this.matchChat = null;
+    this.matchChat = match;
+  }
+
+  // var albumEntryInFirebase = this.getAlbumById(localUpdatedAlbum.$key);
+  //   albumEntryInFirebase.update({
+  //     title: localUpdatedAlbum.title,
+  //     artist: localUpdatedAlbum.artist,
+  //     description: localUpdatedAlbum.description
+  //   });
+  // }
+
+
+  sendMessage(event) {
+    event.preventDefault();
+    console.log(this.userObject.chatLog);
+    console.log(this.matchChat.chatLog.push);
+    this.userObject.chatLog.push(event.target.elements[0].value);
+    this.matchChat.chatLog.push(event.target.elements[0].value);
+    this.globalChatLog = this.userObject.chatLog;
+
+    this.user.update({
+      chatLog: this.userObject.chatLog
+    });
+
+
   }
 
   findUser() {
