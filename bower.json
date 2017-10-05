@@ -12,7 +12,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "v4.0.0-alpha.6"
   },
   "resolutions": {
     "bootstrap": "v4.0.0-alpha.6"

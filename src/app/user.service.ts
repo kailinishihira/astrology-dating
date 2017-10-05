@@ -26,7 +26,8 @@ export class UserService {
   createUser(inputUser: User, photos: FileList) {
     event.preventDefault();
 
-    this.afAuth.auth.createUserWithEmailAndPassword(inputUser.email, inputUser.password).then(() => {
+    this.afAuth.auth.createUserWithEmailAndPassword(inputUser.email, inputUser.password).then((user) => {
+      inputUser.userId = user.uid;
       this.database.list('users').push(inputUser);
       for (let i = 0; i < photos.length; i++) {
         let imageRef = this.storage.storage().ref().child(`images/${this.afAuth.auth.currentUser.uid}`);

@@ -3,6 +3,7 @@ export class User
   public likes: string[] = [''];
   public dislikes: string[] = [''];
   public matches: string[] = [''];
+  public userId: string = '';
 
   constructor(
     public username: string,
@@ -18,4 +19,5 @@ export class User
     public ageRangeMin: number,
     public ageRangeMax: number,
     public description: string = ''){}
+
 }
