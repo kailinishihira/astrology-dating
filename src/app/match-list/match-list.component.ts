@@ -93,7 +93,6 @@ export class MatchListComponent implements OnInit {
     }
 
   like(likedUser) {
-    this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
     this.returnedUser.likes.push(likedUser.email);
 
     //checking to see if they also like you
@@ -133,6 +132,7 @@ export class MatchListComponent implements OnInit {
     .update({
       likes: this.returnedUser.likes
     });
+    this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
   }
 
   dislike(dislikedUser) {
