@@ -1,7 +1,7 @@
 h1 {
   text-align: center;
   color: #6c6666;
-  text-shadow: 2px 4px #2f0d0d;
+  text-shadow: 1px 1px #2f0d0d;
   letter-spacing: 25px;
   font-size: 50px;
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/ltCMCZy/out-of-focus-bokeh-shot-of-sky-and-sunshine-shining-through-leaves-makes-a-nice-abstract-background_m1z2gvmi__F0000.png");
@@ -27,6 +27,7 @@ h3 {
   margin-bottom: 2%;
   font-size: 35px;
   letter-spacing: 3px;
+  color:white;
 }
 
 h3:first-of-type {

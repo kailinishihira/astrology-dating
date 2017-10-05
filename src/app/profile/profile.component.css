@@ -1,7 +1,7 @@
 h1 {
   text-align: center;
   color: #ffffff;
-  text-shadow: 2px 4px #2f0d0d;
+  text-shadow: 1px 1px #2f0d0d;
   letter-spacing: 25px;
   font-size: 50px;
   background-image: url("http://hdwallpaper2013.com/wp-content/uploads/2012/12/I-Love-You-Quotes-HD-Wallpaper.jpg");
@@ -36,6 +36,7 @@ button:hover {
   margin: 30px 20% 200px 20%;
   padding: 50px;
   border: solid 2px;
+  text-align: center;
 }
 
 p {

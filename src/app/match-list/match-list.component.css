@@ -1,7 +1,7 @@
 h1 {
   text-align: center;
   color: #6c6666;
-  text-shadow: 2px 4px #2f0d0d;
+  text-shadow: 1px 1px #2f0d0d;
   letter-spacing: 15px;
   font-size: 50px;
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/ltCMCZy/out-of-focus-bokeh-shot-of-sky-and-sunshine-shining-through-leaves-makes-a-nice-abstract-background_m1z2gvmi__F0000.png");
@@ -65,14 +65,20 @@ bottom: 55%;
 border: solid #b5b2b2 1px;
 padding:1%;
 border-radius: 50%;
-color: #6c6666;
-box-shadow: 1px 3px 3px #e6e5e5;
+color: #499862;
+box-shadow: 1px 3px 3px #499862;
 }
 
 .grow1:hover {
    transform: scale(1.1);
-   box-shadow: 3px 6px 6px #e6e5e5;
+   box-shadow: 3px 6px 6px #499862;
 }
+
+.grow2:hover {
+   transform: scale(1.1);
+   box-shadow: 3px 6px 6px #cc5353;
+}
+
 
 .fa-times {
   position: absolute;
@@ -84,8 +90,8 @@ box-shadow: 1px 3px 3px #e6e5e5;
   border-radius: 50%;
   width: 4.90rem;
   height: 4.90rem;
-  color: #6c6666;
-  box-shadow: 1px 3px 3px #e6e5e5;
+  color: #cc5353;
+  box-shadow: 1px 3px 3px #cc5353;
 }
 
 a{
