@@ -20,6 +20,11 @@ h1 {
   padding: 10px;
 }
 
+.signup-click {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
 .login-btn:hover {
     background-color: #f70449;
     cursor: pointer;

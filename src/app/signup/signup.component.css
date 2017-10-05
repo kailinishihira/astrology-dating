@@ -20,6 +20,10 @@ h1 {
   padding: 50px;
   border: solid 2px;
 }
+.login-click {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
 .input {
   margin-bottom: 15px;
 }
