@@ -70,17 +70,21 @@ export class MatchListComponent implements OnInit {
 
   filterUsers(users){
     let filteredUsers = [];
-    console.log(users);
-    console.log(this.returnedUser);
       for(let j=0; j<users.length; j++){
         if(users[j].email === this.returnedUser.email){
           continue;
         }
+        // console.log(users[j].email);
+        // console.log(this.returnedUser.likes);
+        // console.log(this.returnedUser.dislikes);
+        // console.log(!this.returnedUser.likes.includes(users[j].email));
         if((users[j].interestedIn === "both" || users[j].interestedIn === this.returnedUser.gender) && (this.returnedUser.interestedIn === users[j].gender || this.returnedUser.interestedIn === "both") &&
 
         (users[j].ageRangeMin < this.returnedUser.age && users[j].ageRangeMax > this.returnedUser.age) && (this.returnedUser.ageRangeMin < users[j].age && this.returnedUser.ageRangeMax > users[j].age) &&
 
-        (users[j].element === this.returnedUser.element))
+        (users[j].element === this.returnedUser.element) &&
+        !((this.returnedUser.likes.includes(users[j].email)) || (this.returnedUser.dislikes.includes(users[j].email)))
+        )
         {
           filteredUsers.push(users[j]);
         }
