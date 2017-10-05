@@ -36,8 +36,8 @@ h1 {
   color: #f1f1f1;
   position: absolute;
   font-size: 36px;
-  top: 39%;
-  left: 41%;
+  top: 38%;
+  left: 39%;
   overflow: hidden;
   display:none;
   cursor: pointer;
@@ -48,7 +48,7 @@ h1 {
 
 .img-border:hover + .hover-text{
    display:block;
-
+   pointer-events: none;
 
 }
 /*.card {
