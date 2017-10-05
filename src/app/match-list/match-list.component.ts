@@ -29,6 +29,7 @@ export class MatchListComponent implements OnInit {
   currentPotentialMatch;
   currentPotentialMatchIndex: number = 0;
   showMatchForm: boolean = false;
+  matchedPerson;
 
   constructor(private afAuth: AngularFireAuth, private router: Router, private userService: UserService, private database: AngularFireDatabase, private storage: FirebaseApp) {
     this.afAuth.auth.onAuthStateChanged((myUser) =>{
@@ -93,6 +94,7 @@ export class MatchListComponent implements OnInit {
     }
 
   like(likedUser) {
+    this.matchedPerson = likedUser;
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
     this.returnedUser.likes.push(likedUser.email);
 
@@ -149,9 +151,10 @@ export class MatchListComponent implements OnInit {
     this.router.navigate(['users', clickedUser.$key]);
   }
 
-  cancel() {
+  close() {
     this.showMatchForm = false;
   }
+
 
 
 }

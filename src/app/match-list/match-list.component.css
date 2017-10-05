@@ -91,3 +91,14 @@ box-shadow: 1px 3px 3px #e6e5e5;
 a{
   cursor: pointer;
 }
+
+.matchForm {
+position: fixed;
+width: 50%;
+left: 30%;
+top: 50%;
+background-color: #ff8080;
+border-radius: 10px;
+padding: 40px;
+z-index: 99 !important;
+}
