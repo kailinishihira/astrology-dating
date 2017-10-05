@@ -145,5 +145,9 @@ export class MatchListComponent implements OnInit {
     this.router.navigate(['users', clickedUser.$key]);
   }
 
+  cancel() {
+    this.showMatchForm = false;
+  }
+
 
 }

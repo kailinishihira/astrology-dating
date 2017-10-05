@@ -16,28 +16,21 @@ h1 {
     color: #6c6666;
 }
 
-
-
 #user-photo {
   width: 50%;
   margin-top: 3%;
   border-radius: 50%;
-
 }
 
 .img-border {
   border: solid #b5b2b2 1px;
   padding: 1%;
-
 }
 
 #user-photo:hover  {
   opacity: 0.8;
   cursor: pointer;
-
-
 }
-
 
 .hover-text {
   color: #f1f1f1;
@@ -58,21 +51,11 @@ h1 {
 
 
 }
-
-
-
-
-
-
-
-
-
 /*.card {
   background-color: #EDD1D2;
 }*/
 
 .card-img-top {
-
 }
 
 .fa-check {
@@ -86,14 +69,10 @@ color: #6c6666;
 box-shadow: 1px 3px 3px #e6e5e5;
 }
 
-
-
 .grow1:hover {
    transform: scale(1.1);
    box-shadow: 3px 6px 6px #e6e5e5;
-
 }
-
 
 .fa-times {
   position: absolute;

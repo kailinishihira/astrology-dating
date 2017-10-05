@@ -9,6 +9,7 @@ import { UserService } from '../user.service';
   providers: [UserService]
 })
 export class SignupComponent implements OnInit {
+  errorMessage;
 
   constructor(private userService: UserService) { }
 
@@ -38,9 +39,15 @@ export class SignupComponent implements OnInit {
     //calculate age based on bday instead of having them enter it,
     //same with sign
     let newUser = new User(userName, userPassword, userEmail, userGender, userInterestedIn, userBirthday, userAge, userSign, userElement, userLocation, userAgeRangeMin, userAgeRangeMax, userDescription);
-
     this.userService.createUser(newUser, userPhotos);
+    // setTimeout(()=>{
+    //   this.userService.errorMessage = this.errorMessage;
+    //   console.log("testing" + this.userService.errorMessage);
+    // },500);
+
+
   }
+
   calculateSign(userBirthday): string
  {
    let date = new Date(userBirthday);
@@ -78,6 +85,7 @@ export class SignupComponent implements OnInit {
    sign = "Pisces";
    return sign;
  }
+
   calculateElement(sign): string
   {
     let elementCalculated: string;

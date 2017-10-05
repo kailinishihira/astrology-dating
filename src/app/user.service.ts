@@ -34,6 +34,7 @@ export class UserService {
         imageRef.put(photos[i]).then(() => {
         }).catch((error) => {
           console.log(error.message);
+          this.errorMessage = error.message;
         })
       }
         this.router.navigate(['/start-matches']);

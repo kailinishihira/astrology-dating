@@ -1,5 +1,9 @@
 <h1>Create an Account</h1>
 
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>
+
 <div class="login-link">
   <a class="login-click" routerLink="">Log In</a>
 </div>

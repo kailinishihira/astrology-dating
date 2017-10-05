@@ -24,6 +24,13 @@
 
 </div>
 
+<div *ngIf="showMatchForm" class="matchForm">
+  <h3>You and {{currentPotentialMatch.username}} have been matched!</h3>
+  <button (click)="close()">Close</button>
+  <button (click)="chat()">Chat</button>
+ jesse said to write a method to show form when matched, then click to hide form or chat? haha
+</div>
+
 <!-- <div class="test">
   <div *ngIf="returnedUser">
     <p>{{returnedUser.username}}</p>
