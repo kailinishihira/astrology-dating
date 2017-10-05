@@ -48,13 +48,10 @@ export class MatchListComponent implements OnInit {
         this.users = this.filterUsers(userList);
         this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex];
 
-        // admin.auth().getUserByEmail(this.currentPotentialMatch.email).then((retrievedUser)=>{
-        //   let imageRef = this.storage.storage().ref().child(`images/${retrievedUser.uid}`)
-        //   imageRef.getDownloadURL().then((url) => {
-        //     this.photoUrl = url;
-        //   });
-        // });
-
+        let imageRef = this.storage.storage().ref().child(`images/${this.currentPotentialMatch.userId}`)
+        imageRef.getDownloadURL().then((url) => {
+          this.photoUrl = url;
+        });
       });
     },1500);
   }

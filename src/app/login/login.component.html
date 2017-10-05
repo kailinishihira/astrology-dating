@@ -3,6 +3,10 @@
   <a class="signup-click" routerLink="/signup">Create New Account</a>
 </div>
 
+<div *ngIf="errorMessage">
+  <p>{{errorMessage}}</p>
+</div>
+
 <div class="card">
   <div class="sign-in">
     <form (submit)="logIn($event)">
