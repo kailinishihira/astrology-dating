@@ -37,7 +37,7 @@ export class UserService {
           this.errorMessage = error.message;
         })
       }
-        this.router.navigate(['/start-matches']);
+        this.router.navigate(['/']);
     })
   }
 
