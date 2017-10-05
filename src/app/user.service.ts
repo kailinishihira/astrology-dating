@@ -28,16 +28,25 @@ export class UserService {
 
     this.afAuth.auth.createUserWithEmailAndPassword(inputUser.email, inputUser.password).then((user) => {
       inputUser.userId = user.uid;
+      console.log(photos);
+      console.log(user.uid);
+      console.log(inputUser.userId);
       this.database.list('users').push(inputUser);
       for (let i = 0; i < photos.length; i++) {
-        let imageRef = this.storage.storage().ref().child(`images/${this.afAuth.auth.currentUser.uid}`);
+        console.log(photos[i]);
+        let imageRef = this.storage.storage().ref().child(`images/${inputUser.userId}`);
         imageRef.put(photos[i]).then(() => {
+          console.log("success");
         }).catch((error) => {
           console.log(error.message);
           this.errorMessage = error.message;
         })
       }
+<<<<<<< HEAD
         this.router.navigate(['/']);
+=======
+        //this.router.navigate(['/start-matches']);
+>>>>>>> 3d93d3c6916c55d6dc32c5189eba2a35cef7bf9c
     })
   }
 

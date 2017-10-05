@@ -4,6 +4,7 @@ export class User
   public dislikes: string[] = [''];
   public matches: string[] = [''];
   public userId: string = '';
+  public chatLog: string[] = ['---'];
 
   constructor(
     public username: string,
