@@ -131,8 +131,10 @@ export class UserService {
     // })
   }
 
-  deleteProfile(deleteUser){
 
+  deleteProfile(deleteUser){
+    var userEntryInFirebase = this.getUserByEmail(deleteUser.$key);
+    
   }
 
 
