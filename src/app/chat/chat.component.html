@@ -5,3 +5,9 @@
 
   <button class="btn btn-info" routerLink="">Back to Matches</button>
 </div>
+
+<div *ngIf="matchedListObservable | async" class="matched-section">
+  <div *ngFor="let match of matchedList">
+    <li>{{match.username}}</li>
+  </div>
+</div>
