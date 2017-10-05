@@ -42,11 +42,7 @@ export class UserService {
           this.errorMessage = error.message;
         })
       }
-<<<<<<< HEAD
         this.router.navigate(['/']);
-=======
-        //this.router.navigate(['/start-matches']);
->>>>>>> 3d93d3c6916c55d6dc32c5189eba2a35cef7bf9c
     })
   }
 
