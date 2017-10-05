@@ -5,6 +5,9 @@ import { User } from '../user.model';
 import { UserService} from '../user.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
+import * as firebaseStorage from 'firebase/storage';
+import { FirebaseApp } from 'angularfire2';
 
 
 @Component({
@@ -14,6 +17,7 @@ import { Observable } from 'rxjs/Observable';
   providers: [UserService]
 })
 export class ProfileComponent implements OnInit {
+  photoUrl;
   user;
   userEmail;
   returnedUser;
@@ -21,12 +25,16 @@ export class ProfileComponent implements OnInit {
   currentRoute: string = this.router.url;
   showEditForm: boolean = false;
 
-  constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService) {
+  constructor(private afAuth: AngularFireAuth, private router: Router, private userService: UserService, private storage: FirebaseApp) {
     this.afAuth.auth.onAuthStateChanged((myUser) =>{
     if (myUser) {
       this.user = myUser;
       this.userEmail = this.user.email;
       console.log(this.userEmail);
+      let imageRef = this.storage.storage().ref().child(`images/${myUser.uid}`)
+      imageRef.getDownloadURL().then((url) => {
+        this.photoUrl = url;
+      });
     } else {
       this.router.navigate(['login']);
       }

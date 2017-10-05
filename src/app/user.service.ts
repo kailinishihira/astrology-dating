@@ -29,7 +29,7 @@ export class UserService {
     this.afAuth.auth.createUserWithEmailAndPassword(inputUser.email, inputUser.password).then(() => {
       this.database.list('users').push(inputUser);
       for (let i = 0; i < photos.length; i++) {
-        let imageRef = this.storage.storage().ref().child(`images/${this.afAuth.auth.currentUser.uid}/${Math.floor(Math.random() * 1000)}${photos[i].name}`);
+        let imageRef = this.storage.storage().ref().child(`images/${this.afAuth.auth.currentUser.uid}`);
         imageRef.put(photos[i]).then(() => {
         }).catch((error) => {
           console.log(error.message);
@@ -76,7 +76,7 @@ export class UserService {
     this.afAuth.auth.signOut();
   }
 
-  getPotentialMatches() {
+  getPotentialMatches(){
     return this.users;
   }
 

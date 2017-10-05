@@ -5,7 +5,9 @@ import { User } from '../user.model';
 import { UserService} from '../user.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
-
+import * as firebase from 'firebase/app';
+import * as firebaseStorage from 'firebase/storage';
+import { FirebaseApp } from 'angularfire2';
 
 @Component({
   selector: 'app-match-list',
@@ -15,6 +17,7 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class MatchListComponent implements OnInit {
+  photoUrl;
   user;
   userEmail;
   userObject: User;
@@ -27,7 +30,7 @@ export class MatchListComponent implements OnInit {
   currentPotentialMatchIndex: number = 0;
   showMatchForm: boolean = false;
 
-  constructor(private afAuth: AngularFireAuth, private router : Router, private userService: UserService, private database: AngularFireDatabase) {
+  constructor(private afAuth: AngularFireAuth, private router: Router, private userService: UserService, private database: AngularFireDatabase, private storage: FirebaseApp) {
     this.afAuth.auth.onAuthStateChanged((myUser) =>{
     if (myUser) {
       this.user = myUser;
@@ -40,12 +43,53 @@ export class MatchListComponent implements OnInit {
 
   ngOnInit() {
     this.findUser();
-    this.userService.getPotentialMatches().subscribe((userList) => {
-      this.users = userList;
-      this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex];
-    });
+    setTimeout(()=>{
+      this.userService.getPotentialMatches().subscribe((userList) => {
+        this.users = this.filterUsers(userList);
+        this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex];
 
+        // admin.auth().getUserByEmail(this.currentPotentialMatch.email).then((retrievedUser)=>{
+        //   let imageRef = this.storage.storage().ref().child(`images/${retrievedUser.uid}`)
+        //   imageRef.getDownloadURL().then((url) => {
+        //     this.photoUrl = url;
+        //   });
+        // });
+
+      });
+    },1500);
   }
+
+  findUser() {
+    this.userService.getUserByEmail(this.userEmail);
+    this.userService.newUser.subscribe(data => {
+      data.forEach(myUser => {
+        if (myUser.email === this.userEmail) {
+          this.returnedUser = myUser;
+          this.returnedUserId = myUser.$key;
+        }
+      })
+    });
+  }
+
+  filterUsers(users){
+    let filteredUsers = [];
+    console.log(users);
+    console.log(this.returnedUser);
+      for(let j=0; j<users.length; j++){
+        if(users[j].email === this.returnedUser.email){
+          continue;
+        }
+        if((users[j].interestedIn === "both" || users[j].interestedIn === this.returnedUser.gender) && (this.returnedUser.interestedIn === users[j].gender || this.returnedUser.interestedIn === "both") &&
+
+        (users[j].ageRangeMin < this.returnedUser.age && users[j].ageRangeMax > this.returnedUser.age) && (this.returnedUser.ageRangeMin < users[j].age && this.returnedUser.ageRangeMax > users[j].age) &&
+
+        (users[j].element === this.returnedUser.element))
+        {
+          filteredUsers.push(users[j]);
+        }
+      }
+      return filteredUsers;
+    }
 
   like(likedUser) {
     this.currentPotentialMatch = this.users[this.currentPotentialMatchIndex++];
@@ -104,15 +148,5 @@ export class MatchListComponent implements OnInit {
     this.router.navigate(['users', clickedUser.$key]);
   }
 
-  findUser() {
-    this.userService.getUserByEmail(this.userEmail);
-    this.userService.newUser.subscribe(data => {
-      data.forEach(myUser => {
-        if (myUser.email === this.userEmail) {
-          this.returnedUser = myUser;
-          this.returnedUserId = myUser.$key;
-        }
-      })
-    });
-  }
+
 }

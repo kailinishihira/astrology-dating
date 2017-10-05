@@ -3,14 +3,9 @@
   <div class="card mb-3">
     <div *ngIf ="currentPotentialMatch" class="card text-center">
       <div class="match-list-photos">
-        <img id="user-photo" (click) = "goToDetailPage(currentPotentialMatch)" class="card-img-top img-border" src="{{currentPotentialMatch.image}}" alt="match image">
+        <img id="user-photo" (click) = "goToDetailPage(currentPotentialMatch)" class="card-img-top img-border" src="{{photoUrl}}" alt="match image">
         <h3 class="hover-text">More Details</h3>
       </div>
-
-
-
-
-
 
       <a (click)="like(currentPotentialMatch)"><i class="fa fa-check fa-3x grow1" aria-hidden="true"></i></a>
       <a (click)="dislike(currentPotentialMatch)"><i class="fa fa-times fa-3x grow1" aria-hidden="true"></i></a>

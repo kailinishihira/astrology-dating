@@ -47,6 +47,11 @@ export class SignupComponent implements OnInit {
    let month = date.getUTCMonth()+1;
    let day = date.getUTCDate();
    let sign: string;
+   console.log("date" + date);
+   console.log("month" + month);
+   console.log("day" + day);
+
+
    if( (( month === 3 ) && (day >= 21 && day <= 31)) || (( month === 4) && (day >=1 && day <= 19)))
    sign = "Aries";
    else if( (( month === 4) && (day >= 20 && day <= 30)) || (( month === 5) && (day >=1 && day <= 21)))
@@ -69,7 +74,7 @@ export class SignupComponent implements OnInit {
    sign = "Capricorn";
    else if( (( month === 1) && (day >= 21 && day <= 31)) || (( month === 2) && (day >= 1 && day <= 19)))
    sign = "Aquarius";
-   else if( (( month === 2) && (day >= 20 && day <= 31)) || (( month === 3) && (day >= 1 && day <= 20)))
+   else ( (( month === 2) && (day >= 20 && day <= 31)) || (( month === 3) && (day >= 1 && day <= 20)))
    sign = "Pisces";
    return sign;
  }
@@ -78,7 +83,7 @@ export class SignupComponent implements OnInit {
     let elementCalculated: string;
     if(sign === "Aries" || sign === "Leo" || sign === "Sagittarius")
     elementCalculated = "Fire";
-    else if( sign === "Pieces" || sign === "Cancer" || sign === "Scorpio")
+    else if( sign === "Pisces" || sign === "Cancer" || sign === "Scorpio")
     elementCalculated = "Water";
     else if( sign === "Taurus" || sign === "Virgo" || sign === "Capricorn")
     elementCalculated = "Earth";
