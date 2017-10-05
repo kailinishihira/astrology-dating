@@ -24,8 +24,8 @@
   <div *ngIf="showMatchForm" class="matchForm">
     <h3>You and {{matchedPerson.username}} have been matched!</h3>
     <div class="buttons">
-      <button (click)="close()" class="btn">Close</button>
-      <button (click)="chat()" routerLink="chat" class="btn">Chat</button>
+      <button (click)="close()" class="btn close-button">Close</button>
+      <button (click)="chat()" routerLink="chat" class="btn chat-button">Chat</button>
     </div>
   </div>
 </div>

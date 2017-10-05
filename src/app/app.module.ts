@@ -27,7 +27,7 @@ import 'firebase/storage';
 import { FileDropDirective, FileSelectDirective } from 'ng2-file-upload';
 import { FilteredSignsComponent } from './filtered-signs/filtered-signs.component';
 import { ElementPipe } from './element.pipe';
-import { StartMatchesComponent } from './start-matches/start-matches.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -55,8 +55,7 @@ export const firebaseConfig = {
     FileDropDirective,
     FileSelectDirective,
     FilteredSignsComponent,
-    ElementPipe,
-    StartMatchesComponent
+    ElementPipe
   ],
   imports: [
     BrowserModule,
